@@ -1,10 +1,16 @@
 // src/app/layout.tsx
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { Rubik } from 'next/font/google'; 
 import './globals.css';
 import Navbar from '@/components/Navbar';
 
 const inter = Inter({ subsets: ['latin'] });
+
+const rubik = Rubik({
+  weight: ['400', '500', '600', '700'], // Specify the weights
+  subsets: ['latin'],
+});
 
 export const metadata: Metadata = {
   title: 'Art Portfolio',
@@ -18,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={rubik.className}>
         <Navbar />
         <main className="min-h-screen">{children}</main>
       </body>

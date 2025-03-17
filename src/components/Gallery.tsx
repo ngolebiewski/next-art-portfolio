@@ -43,7 +43,7 @@ const Gallery = ({ series, description }: GalleryProps) => {
   return (
     <div className="p-4">
       <p className="mb-4">{description}</p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {images.map((image) => (
           <div key={image} className="cursor-pointer" onClick={() => openModal(image)}>
             <Image

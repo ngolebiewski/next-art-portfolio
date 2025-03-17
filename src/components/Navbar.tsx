@@ -8,14 +8,14 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="p-4 flex justify-between items-center border-b border-gray-200">
-      <Link href="/" className="text-xl font-bold">
-        Nick Golebiewski
+    <nav className="p-4 flex justify-between items-center border-b border-gray-800">
+      <Link href="/" className="text-4xl font-bold">
+        NICK GOLEBIEWSKI
       </Link>
       <ul className="flex space-x-4">
         <li>
           <Link
-            href="/art/paintings/"
+            href="/art/paintings/chinatown"
             className={pathname.startsWith("/art") ? "text-blue-600" : ""}
           >
             ART
