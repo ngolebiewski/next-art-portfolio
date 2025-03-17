@@ -1,3 +1,16 @@
+Dev Log
+- Perhaps I should have used a more robust template, but here we go. A journey to learn Next and perhaps even get a working art portfolio in the mix. 
+- Goal: Learn Typescript. Learn Next.js. GO!
+
+1. Create project, git repo, and deploy on Vercel (hmmm it is so easy...)
+2. Deployed on Vercel, auto with every push: https://next-art-portfolio-test.vercel.app/
+3. Delete Vercel boilerplate -- although may have done with studying it a bit more first!
+4. Create components folder, make a navbar. Note the use of Link rather than for partial reloads, so it acts like an app and avoids full page reloads
+5. Create about/art/contact/tech directories and page.tsx files within.
+    -   `mkdir -p src/app/{art,tech,about,contact} && touch src/app/{art,tech,about,contact}/page.tsx`
+
+
+------
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
