@@ -1,56 +1,169 @@
 // src/components/Navbar.tsx
+
 "use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Dialog } from "@headlessui/react";
+import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/outline";
 
 const Navbar = () => {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="p-4 flex justify-between items-center border-b border-gray-800">
-      <Link href="/" className="text-4xl font-bold">
-        NICK GOLEBIEWSKI
-      </Link>
-      <ul className="flex space-x-4">
-        <li>
-          <Link
-            href="/art/paintings/chinatown"
-            className={pathname.startsWith("/art") ? "text-blue-600" : ""}
+    <nav className="p-4 border-b border-gray-800 bg-white">
+      {/* Top section with name & hamburger */}
+      <div className="flex justify-between items-center">
+        <Link href="/" className="font-bold text-2xl md:text-4xl">
+          NICK GOLEBIEWSKI
+        </Link>
+
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex space-x-6">
+          {[
+            { href: "/art/paintings/chinatown", label: "ART" },
+            { href: "/tech", label: "TECH" },
+            { href: "/about", label: "ABOUT" },
+            { href: "/contact", label: "CONTACT" },
+          ].map(({ href, label }) => (
+            <li key={href}>
+              <Link
+                href={href}
+                className={`hover:text-blue-600 transition ${
+                  pathname === href ? "text-blue-600" : ""
+                }`}
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* Hamburger Menu - Only on Mobile */}
+        <button
+          className="md:hidden p-2"
+          onClick={() => setIsOpen(true)}
+          aria-label="Open menu"
+        >
+          <Bars3Icon className="h-6 w-6" />
+        </button>
+      </div>
+
+      {/* Mobile Menu - Slide-in Overlay */}
+      <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
+        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm" aria-hidden="true" />
+
+        <Dialog.Panel className="fixed top-0 right-0 h-full w-3/4 sm:w-1/2 bg-white shadow-lg p-5 transition-transform transform translate-x-0">
+          {/* Close Button */}
+          <button
+            className="absolute top-4 right-4 p-2"
+            onClick={() => setIsOpen(false)}
+            aria-label="Close menu"
           >
-            ART
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/tech"
-            className={pathname === "/tech" ? "text-blue-600" : ""}
-          >
-            TECH
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/about"
-            className={pathname === "/about" ? "text-blue-600" : ""}
-          >
-            ABOUT
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/contact"
-            className={pathname === "/contact" ? "text-blue-600" : ""}
-          >
-            CONTACT
-          </Link>
-        </li>
-      </ul>
+            <XMarkIcon className="h-6 w-6 text-gray-700" />
+          </button>
+
+          {/* Mobile Nav Links */}
+          <ul className="mt-8 space-y-6 text-xl">
+            {[
+              { href: "/art/paintings/chinatown", label: "ART" },
+              { href: "/tech", label: "TECH" },
+              { href: "/about", label: "ABOUT" },
+              { href: "/contact", label: "CONTACT" },
+            ].map(({ href, label }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className={`block px-4 py-2 rounded-lg hover:bg-gray-100 transition ${
+                    pathname === href ? "text-blue-600" : ""
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Dialog.Panel>
+      </Dialog>
     </nav>
   );
 };
 
 export default Navbar;
+
+
+
+
+////////////////////////////////////
+// //GOOD - GO back to this if needed
+// "use client";
+
+// import Link from 'next/link';
+// import { usePathname } from 'next/navigation';
+// import clsx from 'clsx';
+
+// const Navbar = () => {
+//   const pathname = usePathname();
+
+//   return (
+//     <nav className="p-4 flex justify-between items-center border-b border-gray-800">
+//       <Link href="/" className="font-bold text-1xl md:text-4xl ">
+//         NICK GOLEBIEWSKI
+//       </Link>
+//       <ul className="flex space-x-4">
+//         <li>
+//           <Link
+//             href="/art/paintings/chinatown"
+//             className={pathname.startsWith("/art") ? "text-blue-600" : ""}
+//           >
+//             ART
+//           </Link>
+//         </li>
+//         <li>
+//           <Link
+//             href="/tech"
+//             className={pathname === "/tech" ? "text-blue-600" : ""}
+//           >
+//             TECH
+//           </Link>
+//         </li>
+//         <li>
+//           <Link
+//             href="/about"
+//             className={pathname === "/about" ? "text-blue-600" : ""}
+//           >
+//             ABOUT
+//           </Link>
+//         </li>
+//         <li>
+//           <Link
+//             href="/contact"
+//             className={pathname === "/contact" ? "text-blue-600" : ""}
+//           >
+//             CONTACT
+//           </Link>
+//         </li>
+//       </ul>
+//     </nav>
+//   );
+// };
+
+// export default Navbar;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // SUPER BASIC VERSION _ NICE!
@@ -75,6 +188,107 @@ export default Navbar;
 //         </li>
 //         <li>
 //           <Link href="/contact">CONTACT</Link>
+//         </li>
+//       </ul>
+//     </nav>
+//   );
+// };
+
+// export default Navbar;
+
+
+
+////////////////////////////
+// // MOBILE-ISH BUT WEIRD
+
+// "use client";
+
+// import { useState } from "react";
+// import Link from "next/link";
+// import { usePathname } from "next/navigation";
+// import { Dialog } from "@headlessui/react";
+// import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/outline";
+
+// const Navbar = () => {
+//   const pathname = usePathname();
+//   const [isOpen, setIsOpen] = useState(false);
+
+//   return (
+//     <nav className="p-4 border-b border-gray-800">
+//       {/* Top section with name & hamburger */}
+//       <div className="flex justify-between items-center">
+//         <Link href="/" className="font-bold text-2xl md:text-4xl">
+//           NICK GOLEBIEWSKI
+//         </Link>
+
+//         {/* Hamburger Menu - Only on Mobile */}
+//         <button
+//           className="md:hidden p-2"
+//           onClick={() => setIsOpen(true)}
+//           aria-label="Open menu"
+//         >
+//           <Bars3Icon className="h-6 w-6" />
+//         </button>
+//       </div>
+
+//       {/* Mobile Menu - Dialog from headless UI */}
+//       <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="md:hidden">
+//         <Dialog.Panel className="fixed inset-0 bg-black bg-opacity-90 p-4 flex flex-col items-center space-y-4">
+//           {/* Close Button */}
+//           <button
+//             className="absolute top-4 right-4 p-2"
+//             onClick={() => setIsOpen(false)}
+//             aria-label="Close menu"
+//           >
+//             <XMarkIcon className="h-6 w-6 text-white" />
+//           </button>
+
+//           {/* Mobile Nav Links */}
+//           <ul className="flex flex-col space-y-4 text-white text-2xl">
+//             {[
+//               { href: "/art/paintings/chinatown", label: "ART" },
+//               { href: "/tech", label: "TECH" },
+//               { href: "/about", label: "ABOUT" },
+//               { href: "/contact", label: "CONTACT" },
+//             ].map(({ href, label }) => (
+//               <li key={href}>
+//                 <Link
+//                   href={href}
+//                   className={pathname === href ? "text-blue-400" : ""}
+//                   onClick={() => setIsOpen(false)}
+//                 >
+//                   {label}
+//                 </Link>
+//               </li>
+//             ))}
+//           </ul>
+//         </Dialog.Panel>
+//       </Dialog>
+
+//       {/* Desktop Menu */}
+//       <ul className="hidden md:flex space-x-4">
+//         <li>
+//           <Link
+//             href="/art/paintings/chinatown"
+//             className={pathname.startsWith("/art") ? "text-blue-600" : ""}
+//           >
+//             ART
+//           </Link>
+//         </li>
+//         <li>
+//           <Link href="/tech" className={pathname === "/tech" ? "text-blue-600" : ""}>
+//             TECH
+//           </Link>
+//         </li>
+//         <li>
+//           <Link href="/about" className={pathname === "/about" ? "text-blue-600" : ""}>
+//             ABOUT
+//           </Link>
+//         </li>
+//         <li>
+//           <Link href="/contact" className={pathname === "/contact" ? "text-blue-600" : ""}>
+//             CONTACT
+//           </Link>
 //         </li>
 //       </ul>
 //     </nav>

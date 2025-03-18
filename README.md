@@ -8,9 +8,15 @@ Dev Log
 4. Create components folder, make a navbar. Note the use of Link rather than for partial reloads, so it acts like an app and avoids full page reloads
 5. Create about/art/contact/tech directories and page.tsx files within.
     -   `mkdir -p src/app/{art,tech,about,contact} && touch src/app/{art,tech,about,contact}/page.tsx`
+6. Make some sort of Gallery. Start with the 'Chinatown Series' and for the time being, rename images 1.jopg, 2.jpg, etc. as a placeholder
+7. Discover Typescript with ESLint is like GoLang, and won't compile if there are unused imports and variables, and fix after I notice the last few commits didn't deploy.
+8. Add in hero image for home page -> Will need to fix the verical scroll bar. Would be cool to put in a big p5.js animation interactive thing. 
+9. Note: Oi Vey, will need to fix the sidebar on the left to disappear when on mobile.
+10. Make the NavBar up top more mobile friendly, with a veggieburger and making the artist name font smaller. 
 
 
-------
+
+------boilerplate below------------------
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
