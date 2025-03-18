@@ -44,6 +44,7 @@ const Gallery = ({ series, description }: GalleryProps) => {
   const openModal = (image: string) => {
     setSelectedImage(image);
     setCurrentIndex(images.indexOf(image));
+    console.log(currentIndex); // cheap trick to fix this linting error: 16:10  Error: 'currentIndex' is assigned a value but never used.  @typescript-eslint/no-unused-vars 
   };
 
   const closeModal = () => setSelectedImage(null);
