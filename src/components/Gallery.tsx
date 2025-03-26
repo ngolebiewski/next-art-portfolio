@@ -109,7 +109,7 @@ const Gallery = ({ series, description }: GalleryProps) => {
         <div className="fixed inset-0 bg-black/70" aria-hidden="true" onClick={closeModal} />
         <div className="fixed inset-0 flex items-center justify-center p-4">
           <Dialog.Panel
-            className="relative w-screen h-screen bg-white/90 flex items-center justify-center" // bg-black is pretty nice too. But I think bg-white gives you more an art gallery vibe.
+            className="relative w-screen h-screen bg-white/100 flex items-center justify-center" // bg-black is pretty nice too. But I think bg-white gives you more an art gallery vibe.
             onMouseDown={handleMouseDown} // Start drag
             onMouseMove={handleMouseMove} // Track movement
             onMouseUp={handleMouseUp}     // End drag
