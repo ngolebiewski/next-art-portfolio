@@ -109,7 +109,7 @@ const Gallery = ({ series, description }: GalleryProps) => {
         <div className="fixed inset-0 bg-black/70" aria-hidden="true" onClick={closeModal} />
         <div className="fixed inset-0 flex items-center justify-center p-4">
           <Dialog.Panel
-            className="relative w-screen h-screen bg-black flex items-center justify-center"
+            className="relative w-screen h-screen bg-white/90 flex items-center justify-center" // bg-black is pretty nice too. But I think bg-white gives you more an art gallery vibe.
             onMouseDown={handleMouseDown} // Start drag
             onMouseMove={handleMouseMove} // Track movement
             onMouseUp={handleMouseUp}     // End drag
@@ -145,12 +145,22 @@ const Gallery = ({ series, description }: GalleryProps) => {
 
             <button
               onClick={goToNext}
-              className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2"
+              className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2" // dark
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
               </svg>
             </button>
+
+            {/* <button
+              onClick={goToNext}
+              className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-40 text-gray-800 border-2 border-gray-800 rounded-full p-2"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button> */}
+
           </Dialog.Panel>
         </div>
       </Dialog>

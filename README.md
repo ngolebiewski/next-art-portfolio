@@ -21,7 +21,7 @@ Dev Log
 
 14. Adding in my art cv. I already have it as a Google Doc. 
 The amount I want to reformat it by hand is "not-at-all", so how about downloading the file as markdown and working with that?
-OK, Next has something called MDX, but tryng a less complex version with react-markdown. Eventually I **should** refactor to the MDX, since it will probably be the nicest way to write content in the long run. I'm curious to see if the SSR will build properly and not give an error once off my local computer.
+OK, Next has something called MDX, but tryng a less complex version with react-markdown. Eventually I **should** refactor to the MDX, since it will probably be the nicest way to write content in the long run. I'm curious to see if the SSR will build properly and not give an error once off my local computer. Info: https://nextjs.org/docs/app/building-your-application/configuring/mdx
 
 ## ------boilerplate below------------------
 

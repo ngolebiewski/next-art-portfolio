@@ -103,16 +103,16 @@ Design Trust for Public Space Art \+ Design Benefit Auction 11/1/2017
 **2016**	Design Trust for Public Space Art \+ Design Benefit Auction 11/1/2016
 
 ## Press
-**2024**	“[Jefferson Market Library Arts Programming](https://pbs.twimg.com/media/GVnaMUBWQAAe8RH?format=jpg&name=4096x4096)” – Village View, May 2024  
-**2021**	“[Fine Artist Paints our Dog Hudson's Portrait in New York City](https://www.youtube.com/watch?v=A5H9hH-FS4o&ab_channel=JamesandKarla)”—James and Karla 10/10/2021  
-“[Nick Golebiewski Captures the Spirit of New York in Bronx Little Italy, Chinatown and More](https://thefordhamram.com/81042/culture/nick-golebiewski-captures-the-spirit-of-new-york-in-bronx-little-italy-chinatown-and-more/)”—  
+**2024**	[Jefferson Market Library Arts Programming](https://pbs.twimg.com/media/GVnaMUBWQAAe8RH?format=jpg&name=4096x4096) – Village View, May 2024  
+**2021**	["Fine Artist Paints our Dog Hudson's Portrait in New York City"](https://www.youtube.com/watch?v=A5H9hH-FS4o&ab_channel=JamesandKarla)—James and Karla 10/10/2021  
+["Nick Golebiewski Captures the Spirit of New York in Bronx Little Italy, Chinatown and More"](https://thefordhamram.com/81042/culture/nick-golebiewski-captures-the-spirit-of-new-york-in-bronx-little-italy-chinatown-and-more/)—  
 The Fordham Ram 4/28/2021  
-**2020**	“[Spotlight on Nick Golebiewski](http://www.outtherepodcast.com/blog/2020/10/22/spotlight-on-nick-golebiewski)”—Out There Podcast 10/22/2020  
-**“(https://lithub.com/these-library-watercolors-will-soothe-your-anxious-soul/)[These library watercolors will soothe your anxious soul](https://lithub.com/these-library-watercolors-will-soothe-your-anxious-soul/)”—Literary Hub 8/11/2020  
+**2020**	["Spotlight on Nick Golebiewski"](http://www.outtherepodcast.com/blog/2020/10/22/spotlight-on-nick-golebiewski)—Out There Podcast 10/22/2020  
+["These library watercolors will soothe your anxious soul"](https://lithub.com/these-library-watercolors-will-soothe-your-anxious-soul/)—Literary Hub 8/11/2020  
 **2019** 	["‘It was absolutely beautiful’: NYC artist sketches iconic Cape Breton scenes”](https://www.cbc.ca/news/canada/nova-scotia/ny-artist-sketch-a-day-cape-breton-1.5216142)—CBC (Canadian Broadcasting Corporation) 7/18/2019  
-**2017** 	["A Sketchy Greenwich Village](https://www.villagepreservation.org/2017/01/02/a-sketchy-greenwich-village/)”—Off the Grid, the Blog of the Greenwich Village Society for Historic Preservation 1/2/2017  
+**2017** 	["A Sketchy Greenwich Village"](https://www.villagepreservation.org/2017/01/02/a-sketchy-greenwich-village/)—Off the Grid, the Blog of the Greenwich Village Society for Historic Preservation 1/2/2017  
 **2016** 	"Amazing: You should follow @nickdesign's simply beautiful sketches"—Twitter Moment 5/20/2016 
-“[Nick’s Lunchbox Service Serves up Delectable Washington Square in ‘Drawing-a-Day Project](https://www.washingtonsquareparkblog.com/2016/05/18/nicks-lunchbox-service-delectable-washington-square-park-drawing-a-day-greenwich-village/)’”— Washington Square Park Blog 5/18/ 2016  
+["Nick’s Lunchbox Service Serves up Delectable Washington Square in 'Drawing-a-Day Project'"](https://www.washingtonsquareparkblog.com/2016/05/18/nicks-lunchbox-service-delectable-washington-square-park-drawing-a-day-greenwich-village/)’”— Washington Square Park Blog 5/18/ 2016  
 **2015**	“Photo(s) of the Week: Drawing Inspiration from the High Line”— High Line Blog 7/1/2015
 
 # Education
