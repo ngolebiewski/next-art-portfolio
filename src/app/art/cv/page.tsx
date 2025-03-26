@@ -18,13 +18,13 @@ export default async function CvPage() {
       <ReactMarkdown 
         remarkPlugins={[remarkBreaks]}
         components={{
-          h1: ({ node, ...props }) => (
+          h1: ({ ...props }) => (
             <h1 className="text-2xl font-bold my-2" {...props} />
           ),
-          h2: ({ node, ...props }) => (
+          h2: ({ ...props }) => (
             <h2 className="text-xl font-semibold mt-6 mb-2" {...props} />
           ),
-          a: ({ node, ...props }) => (
+          a: ({ ...props }) => (
             <a {...props} className='text-blue-500 underline' />
           ),
         }}>{markdownContent}</ReactMarkdown>
