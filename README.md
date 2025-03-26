@@ -15,10 +15,17 @@ Dev Log
 10. Make the NavBar up top more mobile friendly, with a veggieburger and making the artist name font smaller. 
 11. Hide sidebar for mobile/add to navbar dropdown on mobile
 12. Digging the Rubik font: https://fonts.google.com/specimen/Rubik?categoryFilters=Feeling:%2FExpressive%2FBusiness;Sans+Serif:%2FSans%2F*
+13. While I'm thinking of it, here's the initial sketched out design of the site...
+
+![sketchbook with a pencil wireframe of the art portfolio site](public/images/ephemera/website_sketch_portfolio.jpg)
+
+14. Adding in my art cv. I already have it as a Google Doc. 
+The amount I want to reformat it by hand is "not-at-all", so how about downloading the file as markdown and working with that?
+OK, Next has something called MDX, but tryng a less complex version with react-markdown. Eventually I **should** refactor to the MDX, since it will probably be the nicest way to write content in the long run. I'm curious to see if the SSR will build properly and not give an error once off my local computer.
+
+## ------boilerplate below------------------
 
 
-
-------boilerplate below------------------
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
