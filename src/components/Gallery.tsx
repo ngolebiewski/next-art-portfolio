@@ -17,6 +17,13 @@ const Gallery = ({ series, description }: GalleryProps) => {
   const [dragStart, setDragStart] = useState<number>(0);
   const [dragEnd, setDragEnd] = useState<number>(0);
 
+  ///////////////////////////////////
+  // should be able to grab different data for this part
+  // TODO TODO TODO TODO TODO TODO //
+  ///////////////////////////////////
+  // Right NOW just placeholder hard coded
+  ///////////////////////////////////
+
   useEffect(() => {
     setImages(Array.from({ length: 10 }, (_, i) => `${i + 1}.jpg`));
   }, []);
@@ -109,7 +116,8 @@ const Gallery = ({ series, description }: GalleryProps) => {
         <div className="fixed inset-0 bg-black/70" aria-hidden="true" onClick={closeModal} />
         <div className="fixed inset-0 flex items-center justify-center p-4">
           <Dialog.Panel
-            className="relative w-screen h-screen bg-white/100 flex items-center justify-center" // bg-black is pretty nice too. But I think bg-white gives you more an art gallery vibe.
+            className="relative w-screen h-screen bg-black/100 flex items-center justify-center" 
+            // bg-black is pretty nice too. But I think bg-white gives you more an art gallery vibe. Update: NO, black background makes sense for an overlay.
             onMouseDown={handleMouseDown} // Start drag
             onMouseMove={handleMouseMove} // Track movement
             onMouseUp={handleMouseUp}     // End drag
