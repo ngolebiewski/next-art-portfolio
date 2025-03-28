@@ -118,6 +118,8 @@ const Gallery = ({ series, description }: GalleryProps) => {
           <Dialog.Panel
             className="relative w-screen h-screen bg-black/100 flex items-center justify-center" 
             // bg-black is pretty nice too. But I think bg-white gives you more an art gallery vibe. Update: NO, black background makes sense for an overlay.
+            // more design notes: All white bg would be good with a 'card' model that switches to more of a 'hero' view. Total React 101 type stuff, haven't you done that with Pokemon?
+            //////////////////////////////////
             onMouseDown={handleMouseDown} // Start drag
             onMouseMove={handleMouseMove} // Track movement
             onMouseUp={handleMouseUp}     // End drag
