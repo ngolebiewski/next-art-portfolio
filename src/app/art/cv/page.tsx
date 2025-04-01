@@ -1,5 +1,3 @@
-import fs from "fs";
-import path from "path";
 import React from "react";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
 import { getMarkdownContent } from "@/utils/getMarkdownContent";

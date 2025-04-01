@@ -1,5 +1,5 @@
 // src/app/art/paintings/chinatown/page.tsx
-import Gallery from '@/components/Gallery';
+// import Gallery from '@/components/Gallery';
 // import GalleryServer from '@/components/GalleryServer';
 
 const ChinatownPage = () => {
