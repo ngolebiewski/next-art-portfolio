@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const paintingsSeries = [
     { href: "/art/paintings/chinatown", label: "Chinatown" },
-    { href: "/art/paintings/streetvendors", label: "Street Vendors" },
+    { href: "/art/paintings/street-vendors", label: "Street Vendors" },
     { href: "/art/paintings/adirondacks", label: "Adirondacks" },
   ];
 

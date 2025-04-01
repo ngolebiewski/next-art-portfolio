@@ -24,6 +24,9 @@ The amount I want to reformat it by hand is "not-at-all", so how about downloadi
 OK, Next has something called MDX, but tryng a less complex version with react-markdown. Eventually I **should** refactor to the MDX, since it will probably be the nicest way to write content in the long run. I'm curious to see if the SSR will build properly and not give an error once off my local computer. Info: https://nextjs.org/docs/app/building-your-application/configuring/mdx
 15. The linter is really strict. Run `pnpm next lint` BEFORE committing to GitHub and getting a failed deploy on Vercel!
 16. make gallery slideshow with white background, rather than black, so it looks more art gallery-like. Not sure if I like the slight transparency or not.
+17. Actually, gallery pop up back to black. white seemed like and error. If it was a card/detail situation white would make more sense. May end up moving to the latter solution, but that will be later on.
+18. I like the markdown as content idea. It separates out the concern of writing content from the code. I think I will stick with that for stand alone text. Otherwise, content will be pulled from a data object. Therefore, made a markdown renderer component and a markdown fetcher util to add into pages that need content like this.
+
 
 ## ------boilerplate below------------------
 
