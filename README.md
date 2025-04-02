@@ -1,3 +1,5 @@
+![Art Portfolio Site with Next.js](/public/screenshots/art_portfolio_header.png)
+
 Dev Log
 - Perhaps I should have used a more robust template, but here we go. A journey to learn Next and perhaps even get a working art portfolio in the mix. 
 - Goal: Learn Typescript. Learn Next.js. GO!
@@ -33,12 +35,16 @@ OK, Next has something called MDX, but tryng a less complex version with react-m
     3.  DB choice: MySQL because I already pay for unlimited MySQL databases with the host I use. Otherwise would use Postgres. BUT! with Prisma the models in the schema are the same, so could build for any DB (I think)
     4.  Right now leaving out users and auth, because it's a one-person portfolio! Will do the bulk of uploading and data pre-processing when importing data from tumblr and instagram exports with Python. May even create a temporary SQLite DB for kicks! 
     5.  Working on the seed file.
-    6. PRISMA commands:
+    6. **PRISMA** commands:
        1. `npx prisma db push` because this instance of MySQL on a shared server does not allow for 'ghost databases' which I didn't know existed before the error Much better to use `Prisma migrate...` which would be the production way to do this.
        2. SEED: `pnpm prisma db seed`
           1. First test works! http://localhost:3000/api/technology
           2. Super cute emoji from Prisma here: `🌱  The seed command has been executed.`
           3. ![Screenshot of the technology endpoint with a few items listed](/public/screenshots/technologies-api.png)
+       3. `npx prisma studio`
+          1. View your tables and data in a spun up server on your dev machine. Nice. 
+ 20. Added a Python Util folder. 
+     1.  First script is just to output text files word ascii art for adding into comments here and there.
 
 
 ## ------Next.js Template boilerplate below------------------

@@ -51,9 +51,9 @@ model Tech {
   id            Int       @id @default(autoincrement())
   projectTitle  String
   headline      String
-  heroImageUrl  String
+  imageUrl      String
   role          String
-  gifUrl        String
+  gifUrl        String?
   description   String
   date          DateTime
   githubUrl     String
