@@ -3,6 +3,7 @@ const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
 
+// Delete old content, useful when first creating the seed file function by function.
 async function deleteContent() {
   console.log("Deleting existing Tech Projects...");
   try {
@@ -21,55 +22,116 @@ async function deleteContent() {
 }
 
 async function seedMediums() {
-    const mediums = [
-        "watercolor", 
-        "oil paint", 
-        "canvas", 
-        "paper", 
-        "pencil", 
-        "gouache", 
-        "super 8 film", 
-        "posca marker", 
-        "pen & ink",
-        "graphite",
-        "carbon paper",
-        "ink",
-        "egg tempera",
-    ];
+  const mediums = [
+    "watercolor",
+    "oil paint",
+    "canvas",
+    "paper",
+    "pencil",
+    "gouache",
+    "super 8 film",
+    "posca marker",
+    "pen & ink",
+    "graphite",
+    "carbon paper",
+    "ink",
+    "egg tempera",
+  ];
 
-    for (const mediumName of mediums) {
-        try {
-            await prisma.medium.create({
-                data: { name: mediumName }
-            });
-            console.info(`Added medium: ${mediumName}`);
-        } catch (error) {
-            if ((error as any).code === 'P2002') { // Unique constraint violation
-                console.warn(`Medium '${mediumName}' already exists.`);
-            } else {
-                console.error(`An unexpected error occurred while adding medium '${mediumName}':`, error);
-            }
-        }
+  for (const mediumName of mediums) {
+    try {
+      await prisma.medium.create({
+        data: { name: mediumName },
+      });
+      console.info(`Added medium: ${mediumName}`);
+    } catch (error) {
+      if ((error as any).code === "P2002") {
+        // Unique constraint violation
+        console.warn(`Medium '${mediumName}' already exists.`);
+      } else {
+        console.error(
+          `An unexpected error occurred while adding medium '${mediumName}':`,
+          error
+        );
+      }
     }
+  }
 }
 
+async function seedSeries() {
+  const series = [
+    "Chinatown",
+    "Coney Island",
+    "Street Vendors",
+    "Adirondacks",
+    "Art as Exchange",
+    "Storefront",
+    "NYC",
+    "Paris",
+    "Drawing-a-Day",
+    "Collaboration",
+    "Russ & Daughters",
+    "Arthur Ave"
+  ];
 
-
-
-async function main() {
-  /////////////////////////////////
-  // CLEAR OUT THE OLD!?
-
-  const deleteOldStuff = true;
-
-  if (deleteOldStuff) {
-    deleteContent();
+  for (const seriesName of series) {
+    try {
+      await prisma.series.create({
+        data: { name: seriesName },
+      });
+      console.info(`Added medium: ${seriesName}`);
+    } catch (error) {
+      if ((error as any).code === "P2002") {
+        // Unique constraint violation
+        console.warn(`Medium '${seriesName}' already exists.`);
+      } else {
+        console.error(
+          `An unexpected error occurred while adding medium '${seriesName}':`,
+          error
+        );
+      }
+    }
   }
+}
 
-  //////////////////////////////////
+async function seed() {
+  const series = [
+    "Chinatown",
+    "Coney Island",
+    "Street Vendors",
+    "Adirondacks",
+    "Art as Exchange",
+    "Storefront",
+    "NYC",
+    "Paris",
+    "Drawing-a-Day",
+    "Collaboration",
+    "Russ & Daughters",
+    "Arthur Ave"
+  ];
 
-  // Seed Technologies
+  for (const seriesName of series) {
+    try {
+      await prisma.series.create({
+        data: { name: seriesName },
+      });
+      console.info(`Added medium: ${seriesName}`);
+    } catch (error) {
+      if ((error as any).code === "P2002") {
+        // Unique constraint violation
+        console.warn(`Medium '${seriesName}' already exists.`);
+      } else {
+        console.error(
+          `An unexpected error occurred while adding medium '${seriesName}':`,
+          error
+        );
+      }
+    }
+  }
+}
+async function seedTechnologies() {
   console.log("Seeding Technologies...");
+
   const techList: string[] = [
     "React",
     "Next.js",
@@ -119,7 +181,9 @@ async function main() {
     }
   }
   console.log("Finished Seeding Technologies...");
+}
 
+async function seedTechPortfolio() {
   /*
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -145,10 +209,10 @@ async function main() {
       gifUrl: null,
       role: "Full-stack Developer, Game Designer, Pixel Artist, Animator",
       description: `Learned Phaser3 (JS 2-D game engine), used Node, Express, React, Redux, PostgreSQL, Prisma, CSS, and JS.\n
-    Implemented Redux to manage state, wrote Redux thunks to handle API calls within the Phaser framework.\n
-    Wrote the REST API endpoints, and middleware to authenticate JSON Web Tokens\n
-    Thought up the "Zurpalen" plot twist and coded the reveal animation\n
-    Designed the database schema, and implemented in PostgreSQL via Prisma ORM.`,
+  Implemented Redux to manage state, wrote Redux thunks to handle API calls within the Phaser framework.\n
+  Wrote the REST API endpoints, and middleware to authenticate JSON Web Tokens\n
+  Thought up the "Zurpalen" plot twist and coded the reveal animation\n
+  Designed the database schema, and implemented in PostgreSQL via Prisma ORM.`,
       date: new Date("2024-02-01"),
       githubUrl: "https://github.com/Team-7-7/newTOZ",
       deployedUrl: "https://tower-of-zurpalen.onrender.com/",
@@ -179,9 +243,9 @@ async function main() {
       gifUrl: null,
       role: "Software Engineer",
       description: `A multiple choice guessing game that utilizes the The Metropolitan Museum of Art API to pull random artworks from the Drawings and Prints, European Paintings, and Photography departments. Which artist made that artwork?
-      \n\n
-    Fetched data from the Met’s public API using Javascript Async/Await and randomly selected artworks.\n
-    Used Javascript to randomly sort the randomly selected artworks choices using the Fisher Yates Algorithm.`,
+    \n\n
+  Fetched data from the Met’s public API using Javascript Async/Await and randomly selected artworks.\n
+  Used Javascript to randomly sort the randomly selected artworks choices using the Fisher Yates Algorithm.`,
       date: new Date("2023-11-01"),
       githubUrl: "https://github.com/ngolebiewski/Met-Super-Guesser",
       deployedUrl: "https://met-super-guesser-beta.netlify.app/",
@@ -231,8 +295,8 @@ async function main() {
       gifUrl: null,
       role: "Web Developer",
       description: `Created a new child theme and design to replace the outdated PHP 7.4 theme, ensuring compatibility with PHP 8.x while maintaining the existing content.\n\n
-    Set up a test server to develop the new theme without disrupting the live site.\n
-    Authored a detailed README for the child theme on GitHub, facilitating future development and maintenance.`,
+  Set up a test server to develop the new theme without disrupting the live site.\n
+  Authored a detailed README for the child theme on GitHub, facilitating future development and maintenance.`,
       date: new Date("2024-06-01"),
       githubUrl: "https://github.com/ngolebiewski/nyc-knights",
       deployedUrl: "https://nycknights.com",
@@ -253,9 +317,9 @@ async function main() {
         "https://github.com/ngolebiewski/fullstack-tech-portfolio/raw/main/public/images/keywordify-animation.gif",
       role: "Software Engineer",
       description: `I wanted to do a project with Python and learn Flask. Keywordify is an app for a software engineer's job search that compares the tech keywords in a job description and their resume. Just save a resume and a job description as .txt files and upload. With the results, green for IN and red for OUT, you can get a sense of how well suited you are and your resume is. Also, I wanted to try Plotly, the sunburst graph provides a graphic represenation of keywords in and out of the resume. Perhaps this will help you get through the ATS and onto a hirer's desk.
-      \n\n
-    The Python code 'sanitizes' the txt files to prevent injection attacks.\n
-    For privacy, I wrote Python code to delete the email address and phone number from uploaded resumes using a Regular Expression.`,
+    \n\n
+  The Python code 'sanitizes' the txt files to prevent injection attacks.\n
+  For privacy, I wrote Python code to delete the email address and phone number from uploaded resumes using a Regular Expression.`,
       date: new Date("2024-08-01"),
       githubUrl: "https://github.com/ngolebiewski/keywordify",
       deployedUrl: "https://keywordify.onrender.com/",
@@ -292,26 +356,16 @@ async function main() {
   console.log("Tech Portfolio Items seeded successfully!");
 }
 
+async function main(deleteExistingData = true) {
+  deleteExistingData
+    ? deleteContent()
+    : console.log("delete all content: false");
+  seedTechnologies();
+  seedTechPortfolio();
+}
+
 ////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////
-
-//   // Seed Mediums
-//   const oil = await prisma.medium.create({
-//     data: { name: 'Oil on Canvas' },
-//   });
-
-//   const digital = await prisma.medium.create({
-//     data: { name: 'Digital' },
-//   });
-
-//   // Seed Tags
-//   const abstract = await prisma.tag.create({
-//     data: { name: 'Abstract' },
-//   });
-
-//   const surreal = await prisma.tag.create({
-//     data: { name: 'Surreal' },
-//   });
 
 //   // Seed Series
 //   const modernArt = await prisma.series.create({
@@ -364,7 +418,7 @@ async function main() {
 // }
 
 main()
-// seedMediums()
+  // seedMediums()
   .catch((e) => {
     console.error("Error seeding database:", e);
     process.exit(1);
@@ -373,4 +427,4 @@ main()
     await prisma.$disconnect();
   });
 
-  // SEED: `pnpm prisma db seed`
+// SEED: `pnpm prisma db seed`

@@ -4,6 +4,9 @@
 tumblr/
 python_util/tumblr_artwork.csv
 
+# python
+.venv
+
 # dependencies
 /node_modules
 /.pnp
