@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-// import figlet from "figlet"; // eventually make the title with this.
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,32 +8,42 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription, // Import DialogDescription
 } from "@/components/ui/dialog";
-// import Image from "next/image";
+
+// Define the TypeScript interfaces based on your Prisma schema
+interface Technology {
+  id: number;
+  name: string;
+  // Add other properties if Technology model has more
+}
+
+interface TechProject {
+  id: number;
+  projectTitle: string;
+  headline: string;
+  imageUrl: string;
+  role: string;
+  gifUrl: string | null;
+  description: string;
+  date: string; // Or Date, depending on how it's serialized
+  githubUrl: string;
+  deployedUrl: string;
+  technologies: Technology[]; // Include the technologies array
+}
 
 const TechPage = () => {
-  const [projects, setProjects] = useState([]);
-  const [selectedProject, setSelectedProject] = useState(null);
-  // const [technologies, setTechnologies] = useState([]);
+  const [projects, setProjects] = useState<TechProject[]>([]);
+  const [selectedProject, setSelectedProject] = useState<TechProject | null>(null);
 
   useEffect(() => {
     fetch("/api/tech-project")
       .then((res) => res.json())
-      .then((data) => {
+      .then((data: TechProject[]) => {
         console.log("tech projects: ", data);
         setProjects(data);
       });
   }, []);
-
-  // useEffect(() => {
-  //   // Fetch technologies data
-  //   fetch("/api/technology")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log("Technologies:", data); // Log the fetched technologies
-  //       setTechnologies(data);
-  //     });
-  // }, []);
 
   return (
     <div className="p-6 font-mono">
@@ -76,6 +85,9 @@ const TechPage = () => {
               <DialogTitle id="dialog-title">
                 {selectedProject.projectTitle}
               </DialogTitle>
+              <DialogDescription id="dialog-description">
+                {selectedProject.description}
+              </DialogDescription>
             </DialogHeader>
             {/* Project Image */}
             <img
@@ -83,27 +95,6 @@ const TechPage = () => {
               alt={selectedProject.projectTitle}
               className="w-full h-64 object-cover rounded-lg mb-4"
             />
-
-            {/* <Image
-              src={project.imageUrl}
-              alt={project.projectTitle}
-              width={500} // Adjust width as needed
-              height={192} // Adjust height as needed (48 * 4)
-              className="w-full h-48 object-cover rounded-t-lg"
-            /> */}
-
-            {/* Project Description */}
-            <p className="text-sm text-gray-700 my-4" id="dialog-description">
-              {selectedProject.description}
-            </p>
-
-            {/* Debugging: Log the selected project's technologies */}
-            {/* <div className="my-4">
-              <h3 className="text-sm font-bold">
-                Selected Project Technologies:
-              </h3>
-              <pre>{JSON.stringify(selectedProject.technologies, null, 2)}</pre>
-            </div> */}
 
             {/* Technologies Used (Filtered by selected project) */}
             <div className="my-4">
