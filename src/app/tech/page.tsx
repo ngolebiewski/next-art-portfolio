@@ -15,7 +15,7 @@ import {
 const TechPage = () => {
   const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [technologies, setTechnologies] = useState([]);
+  // const [technologies, setTechnologies] = useState([]);
 
   useEffect(() => {
     fetch("/api/tech-project")
@@ -26,18 +26,20 @@ const TechPage = () => {
       });
   }, []);
 
-  useEffect(() => {
-    // Fetch technologies data
-    fetch("/api/technology")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("Technologies:", data); // Log the fetched technologies
-        setTechnologies(data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   // Fetch technologies data
+  //   fetch("/api/technology")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log("Technologies:", data); // Log the fetched technologies
+  //       setTechnologies(data);
+  //     });
+  // }, []);
 
   return (
     <div className="p-6 font-mono">
+      <h1 className="text-2xl font-bold my-2">Technology Projects</h1>
+
       {/* Project Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {projects.map((project) => (
