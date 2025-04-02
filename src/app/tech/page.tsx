@@ -8,14 +8,12 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogDescription, // Import DialogDescription
+  DialogDescription,
 } from "@/components/ui/dialog";
 
-// Define the TypeScript interfaces based on your Prisma schema
 interface Technology {
   id: number;
   name: string;
-  // Add other properties if Technology model has more
 }
 
 interface TechProject {
@@ -26,10 +24,10 @@ interface TechProject {
   role: string;
   gifUrl: string | null;
   description: string;
-  date: string; // Or Date, depending on how it's serialized
+  date: string;
   githubUrl: string;
   deployedUrl: string;
-  technologies: Technology[]; // Include the technologies array
+  technologies: Technology[];
 }
 
 const TechPage = () => {
@@ -49,7 +47,6 @@ const TechPage = () => {
     <div className="p-6 font-mono">
       <h1 className="text-2xl font-bold my-2">Technology Projects</h1>
 
-      {/* Project Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {projects.map((project) => (
           <Card
@@ -70,7 +67,6 @@ const TechPage = () => {
         ))}
       </div>
 
-      {/* Dialog */}
       {selectedProject && (
         <Dialog
           open={!!selectedProject}
@@ -89,32 +85,32 @@ const TechPage = () => {
                 {selectedProject.description}
               </DialogDescription>
             </DialogHeader>
-            {/* Project Image */}
             <img
               src={selectedProject.imageUrl}
               alt={selectedProject.projectTitle}
               className="w-full h-64 object-cover rounded-lg mb-4"
             />
 
-            {/* Technologies Used (Filtered by selected project) */}
+            {/* Added Role here */}
+            <div className="my-4">
+              <h3 className="text-sm font-bold">Role:</h3>
+              <p className="text-sm text-gray-700">{selectedProject.role}</p>
+            </div>
+
             <div className="my-4">
               <h3 className="text-sm font-bold">Technologies Used:</h3>
               <div className="flex gap-2 flex-wrap">
-                {selectedProject.technologies?.map((tech) => {
-                  // You could conditionally style based on the tech name or category
-                  return (
-                    <span
-                      key={tech.id}
-                      className="inline-block bg-blue-200 text-blue-800 text-xs py-1 px-3 rounded-full hover:bg-blue-300 cursor-pointer transition duration-200"
-                    >
-                      {tech.name}
-                    </span>
-                  );
-                })}
+                {selectedProject.technologies?.map((tech) => (
+                  <span
+                    key={tech.id}
+                    className="inline-block bg-blue-200 text-blue-800 text-xs py-1 px-3 rounded-full hover:bg-blue-300 cursor-pointer transition duration-200"
+                  >
+                    {tech.name}
+                  </span>
+                ))}
               </div>
             </div>
 
-            {/* GitHub and Live Demo Links */}
             <div className="flex justify-between mt-4">
               <a
                 href={selectedProject.githubUrl}
@@ -134,7 +130,6 @@ const TechPage = () => {
               </a>
             </div>
 
-            {/* Close Button */}
             <Button onClick={() => setSelectedProject(null)}>Close</Button>
           </DialogContent>
         </Dialog>
