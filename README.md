@@ -3,19 +3,20 @@ Dev Log
 - Goal: Learn Typescript. Learn Next.js. GO!
 
 1. Create project, git repo, and deploy on Vercel (hmmm it is so easy...)
-2. Deployed on Vercel, auto with every push: https://next-art-portfolio-test.vercel.app/
-3. Delete Vercel boilerplate -- although may have done with studying it a bit more first!
-4. Create components folder, make a navbar. Note the use of Link rather than for partial reloads, so it acts like an app and avoids full page reloads
-5. Create about/art/contact/tech directories and page.tsx files within.
+2. Using pnpm as recommended.
+3. Deployed on Vercel, auto with every push: https://next-art-portfolio-test.vercel.app/
+4. Delete Vercel boilerplate -- although may have done with studying it a bit more first!
+5. Create components folder, make a navbar. Note the use of Link rather than for partial reloads, so it acts like an app and avoids full page reloads
+6. Create about/art/contact/tech directories and page.tsx files within.
     -   `mkdir -p src/app/{art,tech,about,contact} && touch src/app/{art,tech,about,contact}/page.tsx`
-6. Make some sort of Gallery. Start with the 'Chinatown Series' and for the time being, rename images 1.jpg, 2.jpg, etc. as a placeholder
-7. Discover Typescript with ESLint is like GoLang, and won't compile if there are unused imports and variables, and fix after I notice the last few commits didn't deploy.
-8. Add in hero image for home page -> Will need to fix the verical scroll bar. Would be cool to put in a big p5.js animation interactive thing. 
-9. Note: Oi Vey, will need to fix the sidebar on the left to disappear when on mobile.
-10. Make the NavBar up top more mobile friendly, with a veggieburger and making the artist name font smaller. 
-11. Hide sidebar for mobile/add to navbar dropdown on mobile
-12. Digging the Rubik font: https://fonts.google.com/specimen/Rubik?categoryFilters=Feeling:%2FExpressive%2FBusiness;Sans+Serif:%2FSans%2F*
-13. While I'm thinking of it, here's the initial sketched out design of the site...
+7. Make some sort of Gallery. Start with the 'Chinatown Series' and for the time being, rename images 1.jpg, 2.jpg, etc. as a placeholder
+8. Discover Typescript with ESLint is like GoLang, and won't compile if there are unused imports and variables, and fix after I notice the last few commits didn't deploy.
+9. Add in hero image for home page -> Will need to fix the verical scroll bar. Would be cool to put in a big p5.js animation interactive thing. 
+10. Note: Oi Vey, will need to fix the sidebar on the left to disappear when on mobile.
+11. Make the NavBar up top more mobile friendly, with a veggieburger and making the artist name font smaller. 
+12. Hide sidebar for mobile/add to navbar dropdown on mobile
+13. Digging the Rubik font: https://fonts.google.com/specimen/Rubik?categoryFilters=Feeling:%2FExpressive%2FBusiness;Sans+Serif:%2FSans%2F*
+14. While I'm thinking of it, here's the initial sketched out design of the site...
 
 ![sketchbook with a pencil wireframe of the art portfolio site](public/images/ephemera/website_sketch_portfolio.jpg)
 
@@ -26,9 +27,21 @@ OK, Next has something called MDX, but tryng a less complex version with react-m
 16. make gallery slideshow with white background, rather than black, so it looks more art gallery-like. Not sure if I like the slight transparency or not.
 17. Actually, gallery pop up back to black. white seemed like and error. If it was a card/detail situation white would make more sense. May end up moving to the latter solution, but that will be later on.
 18. I like the markdown as content idea. It separates out the concern of writing content from the code. I think I will stick with that for stand alone text. Otherwise, content will be pulled from a data object. Therefore, made a markdown renderer component and a markdown fetcher util to add into pages that need content like this.
+19. Went down a database rabbit hole!
+    1.  Altough I had been making a quite robust, multiple artist and multiple user api and db with FastAPI and Python...
+    2.  Integrating PRISMA as the ORM. 
+    3.  DB choice: MySQL because I already pay for unlimited MySQL databases with the host I use. Otherwise would use Postgres. BUT! with Prisma the models in the schema are the same, so could build for any DB (I think)
+    4.  Right now leaving out users and auth, because it's a one-person portfolio! Will do the bulk of uploading and data pre-processing when importing data from tumblr and instagram exports with Python. May even create a temporary SQLite DB for kicks! 
+    5.  Working on the seed file.
+    6. PRISMA commands:
+       1. `npx prisma db push` because this instance of MySQL on a shared server does not allow for 'ghost databases' which I didn't know existed before the error Much better to use `Prisma migrate...` which would be the production way to do this.
+       2. SEED: `pnpm prisma db seed`
+          1. First test works! http://localhost:3000/api/technology
+          2. Super cute emoji from Prisma here: `🌱  The seed command has been executed.`
+          3. ![Screenshot of the technology endpoint with a few items listed](/public/screenshots/technologies-api.png)
 
 
-## ------boilerplate below------------------
+## ------Next.js Template boilerplate below------------------
 
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).

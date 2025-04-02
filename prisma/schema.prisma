@@ -1,0 +1,81 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Artwork {
+  id          Int        @id @default(autoincrement())
+  title       String
+  size        String
+  year        Int
+  description String?
+  etsyUrl     String?
+  imageUrl    String
+  type        ArtworkType
+  source      SourceType
+  seriesId    Int?      // Foreign key to Series
+  series      Series?   @relation(fields: [seriesId], references: [id])
+  mediums     Medium[]  @relation("ArtworkMedium")
+  tags        Tag[]     @relation("ArtworkTag")
+}
+
+model Series {
+  id       Int       @id @default(autoincrement())
+  name     String    @unique
+  artworks Artwork[] // One-to-Many relation
+}
+
+model Medium {
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  artworks  Artwork[] @relation("ArtworkMedium")
+}
+
+model Tag {
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  artworks  Artwork[] @relation("ArtworkTag")
+}
+
+model Tech {
+  id            Int       @id @default(autoincrement())
+  projectTitle  String
+  headline      String
+  heroImageUrl  String
+  role          String
+  gifUrl        String
+  description   String
+  date          DateTime
+  githubUrl     String
+  deployedUrl   String
+  technologies  Technology[] @relation("TechTechnology")
+}
+
+model Technology {
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  techs     Tech[]    @relation("TechTechnology")
+}
+
+enum ArtworkType {
+  NLBS
+  painting
+  film
+  art
+}
+
+enum SourceType {
+  studio
+  instagram
+  tumblr
+}
