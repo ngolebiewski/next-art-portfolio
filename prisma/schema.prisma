@@ -20,11 +20,13 @@ model Artwork {
   title       String
   size        String
   year        Int
+  date        DateTime?
   description String?
   etsyUrl     String?
   imageUrl    String
   type        ArtworkType
   source      SourceType
+  order       Int?      // Use to specify image order on portfolio pages
   seriesId    Int?      // Foreign key to Series
   series      Series?   @relation(fields: [seriesId], references: [id])
   mediums     Medium[]  @relation("ArtworkMedium")

@@ -3,10 +3,7 @@ const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
 
-async function main() {
-
-  /////////////////////////////////
-  // CLEAR OUT THE OLD!
+async function deleteContent() {
   console.log("Deleting existing Tech Projects...");
   try {
     await prisma.tech.deleteMany(); // Deletes all records in the Technology table
@@ -21,6 +18,54 @@ async function main() {
   } catch (error) {
     console.error(`Error deleting technologies: ${error}`);
   }
+}
+
+async function seedMediums() {
+    const mediums = [
+        "watercolor", 
+        "oil paint", 
+        "canvas", 
+        "paper", 
+        "pencil", 
+        "gouache", 
+        "super 8 film", 
+        "posca marker", 
+        "pen & ink",
+        "graphite",
+        "carbon paper",
+        "ink",
+        "egg tempera",
+    ];
+
+    for (const mediumName of mediums) {
+        try {
+            await prisma.medium.create({
+                data: { name: mediumName }
+            });
+            console.info(`Added medium: ${mediumName}`);
+        } catch (error) {
+            if ((error as any).code === 'P2002') { // Unique constraint violation
+                console.warn(`Medium '${mediumName}' already exists.`);
+            } else {
+                console.error(`An unexpected error occurred while adding medium '${mediumName}':`, error);
+            }
+        }
+    }
+}
+
+
+
+
+async function main() {
+  /////////////////////////////////
+  // CLEAR OUT THE OLD!?
+
+  const deleteOldStuff = true;
+
+  if (deleteOldStuff) {
+    deleteContent();
+  }
+
   //////////////////////////////////
 
   // Seed Technologies
@@ -58,10 +103,10 @@ async function main() {
     "PyTest",
     "Phaser3",
     "Flask",
-    "PHP", 
-    "PILLOW", 
-    "OpenCV", 
-    "Numpy", 
+    "PHP",
+    "PILLOW",
+    "OpenCV",
+    "Numpy",
   ];
 
   for (const name of techList) {
@@ -89,8 +134,6 @@ async function main() {
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 */
-
-
 
   const towerOfZurpalen = await prisma.tech.create({
     data: {
@@ -202,13 +245,14 @@ async function main() {
   const keywordify = await prisma.tech.create({
     data: {
       projectTitle: "Keywordify",
-      headline: "An app that compares tech keywords in a job description and a resume.",
+      headline:
+        "An app that compares tech keywords in a job description and a resume.",
       imageUrl:
         "https://github.com/ngolebiewski/fullstack-tech-portfolio/raw/main/public/images/keywordify-animation.gif",
-      gifUrl: "https://github.com/ngolebiewski/fullstack-tech-portfolio/raw/main/public/images/keywordify-animation.gif",
+      gifUrl:
+        "https://github.com/ngolebiewski/fullstack-tech-portfolio/raw/main/public/images/keywordify-animation.gif",
       role: "Software Engineer",
-      description:
-        `I wanted to do a project with Python and learn Flask. Keywordify is an app for a software engineer's job search that compares the tech keywords in a job description and their resume. Just save a resume and a job description as .txt files and upload. With the results, green for IN and red for OUT, you can get a sense of how well suited you are and your resume is. Also, I wanted to try Plotly, the sunburst graph provides a graphic represenation of keywords in and out of the resume. Perhaps this will help you get through the ATS and onto a hirer's desk.
+      description: `I wanted to do a project with Python and learn Flask. Keywordify is an app for a software engineer's job search that compares the tech keywords in a job description and their resume. Just save a resume and a job description as .txt files and upload. With the results, green for IN and red for OUT, you can get a sense of how well suited you are and your resume is. Also, I wanted to try Plotly, the sunburst graph provides a graphic represenation of keywords in and out of the resume. Perhaps this will help you get through the ATS and onto a hirer's desk.
       \n\n
     The Python code 'sanitizes' the txt files to prevent injection attacks.\n
     For privacy, I wrote Python code to delete the email address and phone number from uploaded resumes using a Regular Expression.`,
@@ -250,27 +294,6 @@ async function main() {
 
 ////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////
-
-//   const nodejs = await prisma.technology.create({
-//     data: { name: 'Node.js' },
-//   });
-
-//   // Seed Tech Projects
-//   await prisma.tech.create({
-//     data: {
-//       projectTitle: 'Portfolio Website',
-//       headline: 'A modern portfolio built with Next.js and Prisma',
-//       heroImageUrl: '/images/portfolio.jpg',
-//       gifUrl: '/images/portfolio.gif',
-//       description: 'A sleek and interactive portfolio site.',
-//       date: new Date(),
-//       githubUrl: 'https://github.com/your-username/portfolio',
-//       deployedUrl: 'https://yourportfolio.com',
-//       technologies: {
-//         connect: [{ id: react.id }, { id: nodejs.id }],
-//       },
-//     },
-//   });
 
 //   // Seed Mediums
 //   const oil = await prisma.medium.create({
@@ -341,6 +364,7 @@ async function main() {
 // }
 
 main()
+// seedMediums()
   .catch((e) => {
     console.error("Error seeding database:", e);
     process.exit(1);
@@ -348,3 +372,5 @@ main()
   .finally(async () => {
     await prisma.$disconnect();
   });
+
+  // SEED: `pnpm prisma db seed`

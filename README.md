@@ -45,7 +45,15 @@ OK, Next has something called MDX, but tryng a less complex version with react-m
           1. View your tables and data in a spun up server on your dev machine. Nice. 
  20. Added a Python Util folder. 
      1.  First script is just to output text files word ascii art for adding into comments here and there.
-
+ 21. Had lots of issues with deploying on Vercel with the Dreamhost MySQL. Turns out I had quotes around the database_url in the .env file! Also, Dreamhost requires a fixed IP address, something that doesn;t come out of the box with Vercel, so I switched to a Postgres database hosted on Neon. With Prisma it was easy! just changing a provider name and updating the database_url... Eventually in production, when I am on AWS, will have to revisit all of this deployment related stuff. In some ways I wish I just strated off there...
+ 22. More Prisma
+     1.  With a proper Postgres, now using the migrate command for updates to the schema
+     2.  `npx prisma migrate dev --name artwork_order`
+     3.  `npx prisma generate`
+ 23. Note: WORK ON IMAGE OPTIMIZATION
+ 24. Structure for images. Portfolio images in public (~200 images). Drawing-a-day project images, perhaps habe at images.nickgolebiewski.com on Dreamhost -- it would be insane to push up 4,000+ images on every deploy! Will need to work out an upload procedure.
+ 25. Working more on the seed file.
+ 26. Import data from Tumblr and Instagram 'download your data' requests to populate the drawing a day project.
 
 ## ------Next.js Template boilerplate below------------------
 

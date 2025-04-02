@@ -1,5 +1,9 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# project media
+tumblr/
+python_util/tumblr_artwork.csv
+
 # dependencies
 /node_modules
 /.pnp
