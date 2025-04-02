@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import figlet from "figlet";
+// import figlet from "figlet"; // eventually make the title with this.
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,6 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+// import Image from "next/image";
 
 const TechPage = () => {
   const [projects, setProjects] = useState([]);
@@ -80,6 +81,15 @@ const TechPage = () => {
               alt={selectedProject.projectTitle}
               className="w-full h-64 object-cover rounded-lg mb-4"
             />
+
+            {/* <Image
+              src={project.imageUrl}
+              alt={project.projectTitle}
+              width={500} // Adjust width as needed
+              height={192} // Adjust height as needed (48 * 4)
+              className="w-full h-48 object-cover rounded-t-lg"
+            /> */}
+
             {/* Project Description */}
             <p className="text-sm text-gray-700 my-4" id="dialog-description">
               {selectedProject.description}
