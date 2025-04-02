@@ -8,8 +8,10 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// MySQL || Postgres, that is the question...
 datasource db {
-  provider = "mysql"
+  // provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 

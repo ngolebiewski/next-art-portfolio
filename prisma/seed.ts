@@ -59,7 +59,7 @@ async function main() {
     "Phaser3",
     "Flask",
     "PHP", 
-    "Pillow", 
+    "PILLOW", 
     "OpenCV", 
     "Numpy", 
   ];
