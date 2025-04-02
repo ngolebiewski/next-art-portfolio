@@ -5,12 +5,7 @@
       "use": "@vercel/node"
     }
   ],
-  "build": {
-    "env": {
-      "PRISMA_GENERATE": "true"
-    },
-    "commands": [
-      "prisma generate"
-    ]
+  "hooks": {
+    "build": "prisma generate && next build"
   }
 }
