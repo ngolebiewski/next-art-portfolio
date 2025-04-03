@@ -54,6 +54,8 @@ OK, Next has something called MDX, but tryng a less complex version with react-m
  24. Structure for images. Portfolio images in public (~200 images). Drawing-a-day project images, perhaps habe at images.nickgolebiewski.com on Dreamhost -- it would be insane to push up 4,000+ images on every deploy! Will need to work out an upload procedure.
  25. Working more on the seed file.
  26. Import data from Tumblr and Instagram 'download your data' requests to populate the drawing a day project.
+ 27. Trying to get a first pass at visualizing all that tech projects data -- and bringing in https://ui.shadcn.com/docs/installation ShadCN components.
+ 28. I LOVE ❤️ this font! https://departuremono.com/
 
 ## ------Next.js Template boilerplate below------------------
 

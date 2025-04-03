@@ -44,7 +44,7 @@ const TechPage = () => {
   }, []);
 
   return (
-    <div className="p-6 font-mono">
+    <div className="p-6 tech-projects">
       <h1 className="text-2xl font-bold my-2">Technology Projects</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
