@@ -73,7 +73,7 @@ const TechPage = () => {
           onOpenChange={() => setSelectedProject(null)}
         >
           <DialogContent
-            className="max-w-5xl p-8"
+            className="max-w-5xl p-8 tech-projects"
             aria-labelledby="dialog-title"
             aria-describedby="dialog-description"
           >
