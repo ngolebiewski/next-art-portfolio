@@ -72,6 +72,7 @@ const TechPage = () => {
           open={!!selectedProject}
           onOpenChange={() => setSelectedProject(null)}
         >
+         
           <DialogContent
             className="max-w-5xl p-8 tech-projects"
             aria-labelledby="dialog-title"
@@ -88,16 +89,16 @@ const TechPage = () => {
             <img
               src={selectedProject.imageUrl}
               alt={selectedProject.projectTitle}
-              className="w-full h-64 object-cover rounded-lg mb-4"
+              className="w-full h-64 object-cover rounded-lg mb-2"
             />
 
             {/* Added Role here */}
-            <div className="my-4">
+            <div className="my-2">
               <h3 className="text-sm font-bold">Role:</h3>
               <p className="text-sm text-gray-700">{selectedProject.role}</p>
             </div>
 
-            <div className="my-4">
+            <div className="my-2">
               <h3 className="text-sm font-bold">Technologies Used:</h3>
               <div className="flex gap-2 flex-wrap">
                 {selectedProject.technologies?.map((tech) => (
@@ -111,7 +112,7 @@ const TechPage = () => {
               </div>
             </div>
 
-            <div className="flex justify-between mt-4">
+            <div className="flex justify-between mt-2">
               <a
                 href={selectedProject.githubUrl}
                 target="_blank"
