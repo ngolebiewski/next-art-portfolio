@@ -1,14 +1,26 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import figlet from "figlet";
+import figlet, { Fonts } from "figlet"; // Import Fonts type
 import MarkdownRenderer from "@/components/MarkdownRenderer";
 
 const AboutPageClient = ({ markdownContent }: { markdownContent: string | null }) => {
   const [figletText, setFigletText] = useState<string>("");
+  const fonts: Fonts[] = ["Larry 3D", "Doom", "Graffiti", "Isometric1", "Isometric2", "Isometric3", "Isometric4", "Ogre", "Small"]; // Specify the type as Fonts[]
+
+  function getRandomElement(arr: Fonts[]): Fonts { // Specify the type as Fonts[] and return type as Fonts
+    if (arr.length === 0) {
+      return "Larry 3D";
+    }
+    const randomIndex = Math.floor(Math.random() * arr.length);
+    console.log(arr[randomIndex]);
+    return arr[randomIndex];
+  }
+
 
   useEffect(() => {
-    figlet.text("About Me", { font: "Larry 3D" }, (err, data) => {
+    const randomFont = getRandomElement(fonts);
+    figlet.text("About Me", randomFont, (err, data) => { // Pass randomFont directly as the font argument
       if (err) {
         console.error("Failed to generate figlet text:", err);
         setFigletText("About Me");
