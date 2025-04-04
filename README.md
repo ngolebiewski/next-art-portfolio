@@ -1,15 +1,15 @@
 ![Art Portfolio Site with Next.js](/public/screenshots/art_portfolio_header.png)
 
-## Art and Coding Portfolio for Nick Golebiewski
+# Art and Coding Portfolio, by and for Nick Golebiewski
+
 - Use Next.JS and Typescript, Prisma and PostgreSQL, and a bit of Python for data wrangling and writing to the database.
 - Build SQL Database and scripts to import 4,000+ artworks from Instagram and Tumblr data dumps.
 - Make art look good, and replace embarassing old Wordpress site, while showing off coding skills.
 - Deploy on AWS + smartly set us DNS, while keeping some services (like SMTP mail server) on old school Dreamhost. 
 - Increase art business, be able to find artworks, mobile friendly, etc.
 
-## Status
-- Testing out the site of Vercel with a Neon Postgres database
-- 
+## Development
+- Deployed on Vercel with a Neon Database- 
 
 ## Dev Log
 
@@ -66,9 +66,11 @@ OK, Next has something called MDX, but tryng a less complex version with react-m
  24. Structure for images. Portfolio images in public (~200 images). Drawing-a-day project images, perhaps habe at images.nickgolebiewski.com on Dreamhost -- it would be insane to push up 4,000+ images on every deploy! Will need to work out an upload procedure.
  25. Working more on the seed file.
  26. Import data from Tumblr and Instagram 'download your data' requests to populate the drawing a day project.
+     1.  Python for this. See: 
  27. Trying to get a first pass at visualizing all that tech projects data -- and bringing in https://ui.shadcn.com/docs/installation ShadCN components.
  28. I LOVE ❤️ this font! https://departuremono.com/  --> Added to the tech portfoio page.
  29. Grab the footer with social media links and logos from my old tech portfolio site, salvaging useful components. Make it more DRY (do not repeat yourself)
+ 30. Added figlet with js and dool example -> https://patorjk.com/software/taag/#p=display&f=Isometric1&t=Tech%0Aprojects
 
 ## ------Next.js Template boilerplate below------------------
 

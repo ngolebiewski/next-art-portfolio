@@ -5,19 +5,18 @@ const prisma = new PrismaClient();
 
 // Delete old content, useful when first creating the seed file function by function.
 async function deleteContent() {
-  console.log("Deleting existing Tech Projects...");
-  try {
-    await prisma.tech.deleteMany(); // Deletes all records in the Technology table
-    console.log("Deleted existing Tech projects...");
-  } catch (error) {
-    console.error(`Error deleting tech projects: ${error}`);
-  }
-  console.log("Deleting existing Technologies...");
-  try {
-    await prisma.technology.deleteMany(); // Deletes all records in the Technology table
-    console.log("Deleted existing Technologies...");
-  } catch (error) {
-    console.error(`Error deleting technologies: ${error}`);
+  const content = ["tech", "technology", "series"]; // Add the tables here to essentially 'DELETE FROM <tablename>;'
+
+  for (const tableName of content) {
+    console.log(`Deleting existing ${tableName.toUpperCase()} data from DB...`);
+    try {
+      await prisma[tableName].deleteMany(); // Deletes all records in the Technology table
+      console.log(`Deleted existing ${tableName.toUpperCase()} data...`);
+    } catch (error) {
+      console.error(
+        `Error deleting ${tableName.toUpperCase()} projects: ${error}`
+      );
+    }
   }
 }
 
@@ -71,7 +70,7 @@ async function seedSeries() {
     "Drawing-a-Day",
     "Collaboration",
     "Russ & Daughters",
-    "Arthur Ave"
+    "Arthur Ave",
   ];
 
   for (const seriesName of series) {
@@ -107,7 +106,7 @@ async function seed() {
     "Drawing-a-Day",
     "Collaboration",
     "Russ & Daughters",
-    "Arthur Ave"
+    "Arthur Ave",
   ];
 
   for (const seriesName of series) {
@@ -129,6 +128,7 @@ async function seed() {
     }
   }
 }
+
 async function seedTechnologies() {
   console.log("Seeding Technologies...");
 
@@ -166,9 +166,10 @@ async function seedTechnologies() {
     "Phaser3",
     "Flask",
     "PHP",
-    "PILLOW",
+    "Pillow",
     "OpenCV",
     "Numpy",
+    "Photoshop",
   ];
 
   for (const name of techList) {
@@ -184,6 +185,30 @@ async function seedTechnologies() {
 }
 
 async function seedTechPortfolio() {
+  const turtleEncoder = await prisma.tech.create({
+    data: {
+      projectTitle: "Turtle Encoder",
+      headline:
+        "Conceptual art project encoding secret messages with student-painted turtles.",
+      imageUrl: "/images/tech-projects/turtle_encoder.jpg",
+      gifUrl: null,
+      role: "Artist, Project Lead, Software Engineer",
+      description:
+        "Led a 5th-grade class in a conceptual art project that encoded secret messages within an array of student-painted turtle images. The project explored representing information, converting letters to binary code, with turtles and their orientations representing 0s and 1s. Developed both a React/JavaScript web demo and a Python CLI script.",
+      date: new Date("2025-03-17"),
+      githubUrl: "https://github.com/ngolebiewski/turtle_code_python",
+      deployedUrl: "https://turtle-encoder.onrender.com/",
+      technologies: {
+        connect: [
+          { name: "Python" },
+          { name: "Pillow" },
+          { name: "React" },
+          { name: "JavaScript" },
+          { name: "Photoshop" },
+        ],
+      },
+    },
+  });
   /*
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -198,7 +223,7 @@ async function seedTechPortfolio() {
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 */
-
+  /*
   const towerOfZurpalen = await prisma.tech.create({
     data: {
       projectTitle: "The Tower of Zurpalen",
@@ -232,6 +257,8 @@ async function seedTechPortfolio() {
       },
     },
   });
+
+ 
 
   const metSuperGuesser = await prisma.tech.create({
     data: {
@@ -345,23 +372,24 @@ async function seedTechPortfolio() {
       technologies: {
         connect: [
           { name: "Python" },
-          { name: "PILLOW" },
+          { name: "Pillow" },
           { name: "OpenCV" },
           { name: "Numpy" },
         ],
       },
     },
   });
-
+*/
   console.log("Tech Portfolio Items seeded successfully!");
 }
 
-async function main(deleteExistingData = true) {
+async function main(deleteExistingData = false) {
   deleteExistingData
     ? deleteContent()
     : console.log("delete all content: false");
-  seedTechnologies();
+  // seedTechnologies();
   seedTechPortfolio();
+  // seedSeries();
 }
 
 ////////////////////////////////////////////////////////////
