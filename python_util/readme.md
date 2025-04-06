@@ -27,9 +27,12 @@ Wrangle data, write to database (SQL or Postgres), and get Figlet work art.
    1. There was a transition to Instagram over time...
    2. As on Jan 1, 2015 looks like intermittent posts directly on Tumblr, adn some pulled in from IG? 
    3. Pretty much just posting on IG as of 2015-02-25
-   4. Want to look for rows that have an imageURL like this: `media/72621788371.jpg` **NOT** `media/` with nothing afterwards, which imp[lies importing the image from IFTT or Instagram directly
+   4. Want to look for rows that have an imageURL like this: `media/72621788371.jpg` **NOT** `media/` with nothing afterwards, which implies importing the image from IFTT or Instagram directly
    5. OK, earlier than 2015 with a real imageURL is a good starting point
   
+# Download your own images from Etsy
+
+1. See docstring in `python_util/etsy_img_list_for_download.py`
 
 
 
