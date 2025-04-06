@@ -78,6 +78,9 @@ OK, Next has something called MDX, but tryng a less complex version with react-m
      3.  Create database: `CREATE DATABASE art_db_next`
      4.  Connect to new db: `\c art_db_next`
      5.  Update .env `DATABASE_URL="postgresql://<username>:<password>@localhost:5432/art_db_next"`
+ 33. Hero image into component
+ 34. Update Contact page with cellular automata gif
+ 35. Write Python Script to grab your own Etsy images from your account, and put in the Street Vendor Series to start. 
 
 
 ## ------Next.js Template boilerplate below------------------
