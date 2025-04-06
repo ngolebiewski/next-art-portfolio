@@ -71,6 +71,14 @@ OK, Next has something called MDX, but tryng a less complex version with react-m
  28. I LOVE ❤️ this font! https://departuremono.com/  --> Added to the tech portfoio page.
  29. Grab the footer with social media links and logos from my old tech portfolio site, salvaging useful components. Make it more DRY (do not repeat yourself)
  30. Added figlet with js and dool example -> https://patorjk.com/software/taag/#p=display&f=Isometric1&t=Tech%0Aprojects
+ 31. Went down on a tangent, once incorporating server side render for markdown content the way I set it up and choosing a semi-random figlet font on the about page. Way too much time!
+ 32. Time to save on compute for the online db, and set up a local development instance of Postgres.
+     1.  Create a new Postgres DB locally (assuming you already have psql installed via homebrew, etc.)
+     2.  Start Postgres: `psql postgres`
+     3.  Create database: `CREATE DATABASE art_db_next`
+     4.  Connect to new db: `\c art_db_next`
+     5.  Update .env `DATABASE_URL="postgresql://<username>:<password>@localhost:5432/art_db_next"`
+
 
 ## ------Next.js Template boilerplate below------------------
 

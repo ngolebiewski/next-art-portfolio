@@ -30,6 +30,7 @@ async function seedMediums() {
     "gouache",
     "super 8 film",
     "posca marker",
+    "pen",
     "pen & ink",
     "graphite",
     "carbon paper",
@@ -170,6 +171,9 @@ async function seedTechnologies() {
     "OpenCV",
     "Numpy",
     "Photoshop",
+    "Go",
+    "WASM",
+    "Ebitengine",
   ];
 
   for (const name of techList) {
@@ -185,30 +189,6 @@ async function seedTechnologies() {
 }
 
 async function seedTechPortfolio() {
-  const turtleEncoder = await prisma.tech.create({
-    data: {
-      projectTitle: "Turtle Encoder",
-      headline:
-        "Conceptual art project encoding secret messages with student-painted turtles.",
-      imageUrl: "/images/tech-projects/turtle_encoder.jpg",
-      gifUrl: null,
-      role: "Artist, Project Lead, Software Engineer",
-      description:
-        "Led a 5th-grade class in a conceptual art project that encoded secret messages within an array of student-painted turtle images. The project explored representing information, converting letters to binary code, with turtles and their orientations representing 0s and 1s. Developed both a React/JavaScript web demo and a Python CLI script.",
-      date: new Date("2025-03-17"),
-      githubUrl: "https://github.com/ngolebiewski/turtle_code_python",
-      deployedUrl: "https://turtle-encoder.onrender.com/",
-      technologies: {
-        connect: [
-          { name: "Python" },
-          { name: "Pillow" },
-          { name: "React" },
-          { name: "JavaScript" },
-          { name: "Photoshop" },
-        ],
-      },
-    },
-  });
   /*
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -223,14 +203,14 @@ async function seedTechPortfolio() {
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 */
-  /*
+  
   const towerOfZurpalen = await prisma.tech.create({
     data: {
       projectTitle: "The Tower of Zurpalen",
       headline:
         "Team project to build an 8-bit-like game using a 2D game framework and connecting to a database.",
       imageUrl:
-        "https://github.com/ngolebiewski/fullstack-tech-portfolio/raw/main/public/images/tower-of-zarpulen_titlescene.jpg",
+        "/images/tech-projects/tower-of-zarpulen_titlescene.jpg",
       gifUrl: null,
       role: "Full-stack Developer, Game Designer, Pixel Artist, Animator",
       description: `Learned Phaser3 (JS 2-D game engine), used Node, Express, React, Redux, PostgreSQL, Prisma, CSS, and JS.\n
@@ -266,7 +246,7 @@ async function seedTechPortfolio() {
       headline:
         "A multiple choice guessing game that utilizes The Metropolitan Museum of Art API.",
       imageUrl:
-        "https://github.com/ngolebiewski/fullstack-tech-portfolio/raw/main/public/images/met-super-guesser-pissaro.jpg",
+        "/images/tech-projects/met-super-guesser-pissaro.jpg",
       gifUrl: null,
       role: "Software Engineer",
       description: `A multiple choice guessing game that utilizes the The Metropolitan Museum of Art API to pull random artworks from the Drawings and Prints, European Paintings, and Photography departments. Which artist made that artwork?
@@ -293,7 +273,7 @@ async function seedTechPortfolio() {
       headline:
         "A collaborative soundscape and art generation app. When you play a sound, it activates that sound for all users online at that moment in time.",
       imageUrl:
-        "https://github.com/ngolebiewski/fullstack-tech-portfolio/raw/main/public/images/soundscaper-web.gif",
+        "/images/tech-projects/soundscaper-web.gif",
       gifUrl: null,
       role: "Software Engineer, Creative Coder",
       description:
@@ -312,13 +292,38 @@ async function seedTechPortfolio() {
     },
   });
 
+  const turtleEncoder = await prisma.tech.create({
+    data: {
+      projectTitle: "Turtle Encoder",
+      headline:
+        "Conceptual art project encoding secret messages with student-painted turtles.",
+      imageUrl: "/images/tech-projects/turtle_encoder.jpg",
+      gifUrl: null,
+      role: "Artist, Project Lead, Software Engineer",
+      description:
+        "Led a 5th-grade class in a conceptual art project that encoded secret messages within an array of student-painted turtle images. The project explored representing information, converting letters to binary code, with turtles and their orientations representing 0s and 1s. Developed both a React/JavaScript web demo and a Python CLI script.",
+      date: new Date("2025-03-17"),
+      githubUrl: "https://github.com/ngolebiewski/turtle_code_python",
+      deployedUrl: "https://turtle-encoder.onrender.com/",
+      technologies: {
+        connect: [
+          { name: "Python" },
+          { name: "Pillow" },
+          { name: "React" },
+          { name: "JavaScript" },
+          { name: "Photoshop" },
+        ],
+      },
+    },
+  });
+
   const nycKnights = await prisma.tech.create({
     data: {
       projectTitle: "NYC Knights Website",
       headline:
         'Redesigned and redeveloped the WordPress website for the PS 41 "The Greenwich Village School" chess club and team.',
       imageUrl:
-        "https://github.com/ngolebiewski/fullstack-tech-portfolio/raw/main/public/images/NYC-Knights-screenshot.jpg",
+        "/images/tech-projects/NYC-Knights-screenshot.jpg",
       gifUrl: null,
       role: "Web Developer",
       description: `Created a new child theme and design to replace the outdated PHP 7.4 theme, ensuring compatibility with PHP 8.x while maintaining the existing content.\n\n
@@ -339,9 +344,9 @@ async function seedTechPortfolio() {
       headline:
         "An app that compares tech keywords in a job description and a resume.",
       imageUrl:
-        "https://github.com/ngolebiewski/fullstack-tech-portfolio/raw/main/public/images/keywordify-animation.gif",
+        "/images/tech-projects/keywordify-animation.gif",
       gifUrl:
-        "https://github.com/ngolebiewski/fullstack-tech-portfolio/raw/main/public/images/keywordify-animation.gif",
+        "/images/tech-projects/keywordify-animation.gif",
       role: "Software Engineer",
       description: `I wanted to do a project with Python and learn Flask. Keywordify is an app for a software engineer's job search that compares the tech keywords in a job description and their resume. Just save a resume and a job description as .txt files and upload. With the results, green for IN and red for OUT, you can get a sense of how well suited you are and your resume is. Also, I wanted to try Plotly, the sunburst graph provides a graphic represenation of keywords in and out of the resume. Perhaps this will help you get through the ATS and onto a hirer's desk.
     \n\n
@@ -358,10 +363,10 @@ async function seedTechPortfolio() {
 
   const skyCamFlicker = await prisma.tech.create({
     data: {
-      projectTitle: "SkyCam: Flicker",
-      headline: "Creative Technologist",
+      projectTitle: "SkyCam Flicker",
+      headline: "A Python script that animates images from NASA's Perseverance Rover's SkyCam",
       imageUrl:
-        "https://github.com/ngolebiewski/fullstack-tech-portfolio/raw/main/public/images/sol_296.jpg",
+        "/images/tech-projects/sol_296.jpg",
       gifUrl: null,
       role: "Creative Technologist",
       description:
@@ -379,7 +384,7 @@ async function seedTechPortfolio() {
       },
     },
   });
-*/
+
   console.log("Tech Portfolio Items seeded successfully!");
 }
 
@@ -387,9 +392,10 @@ async function main(deleteExistingData = false) {
   deleteExistingData
     ? deleteContent()
     : console.log("delete all content: false");
-  // seedTechnologies();
-  seedTechPortfolio();
-  // seedSeries();
+  await seedTechnologies();
+  await seedTechPortfolio();
+  await seedSeries();
+  await seedMediums();
 }
 
 ////////////////////////////////////////////////////////////

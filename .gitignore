@@ -2,7 +2,9 @@
 
 # project media
 tumblr/
+etsy/
 python_util/tumblr_artwork.csv
+etsy_downloaded_images/
 
 # python
 .venv
