@@ -1,5 +1,6 @@
 import Socials from "@/components/Socials";
 import Hero from "@/components/Hero";
+
 // Nice image for background
 // public/images/chinatown/6.jpg
 //or this gif
