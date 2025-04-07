@@ -203,14 +203,13 @@ async function seedTechPortfolio() {
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 */
-  
+
   const towerOfZurpalen = await prisma.tech.create({
     data: {
       projectTitle: "The Tower of Zurpalen",
       headline:
         "Team project to build an 8-bit-like game using a 2D game framework and connecting to a database.",
-      imageUrl:
-        "/images/tech-projects/tower-of-zarpulen_titlescene.jpg",
+      imageUrl: "/images/tech-projects/tower-of-zarpulen_titlescene.jpg",
       gifUrl: null,
       role: "Full-stack Developer, Game Designer, Pixel Artist, Animator",
       description: `Learned Phaser3 (JS 2-D game engine), used Node, Express, React, Redux, PostgreSQL, Prisma, CSS, and JS.\n
@@ -238,15 +237,12 @@ async function seedTechPortfolio() {
     },
   });
 
- 
-
   const metSuperGuesser = await prisma.tech.create({
     data: {
       projectTitle: "Met Super Guesser",
       headline:
         "A multiple choice guessing game that utilizes The Metropolitan Museum of Art API.",
-      imageUrl:
-        "/images/tech-projects/met-super-guesser-pissaro.jpg",
+      imageUrl: "/images/tech-projects/met-super-guesser-pissaro.jpg",
       gifUrl: null,
       role: "Software Engineer",
       description: `A multiple choice guessing game that utilizes the The Metropolitan Museum of Art API to pull random artworks from the Drawings and Prints, European Paintings, and Photography departments. Which artist made that artwork?
@@ -272,8 +268,7 @@ async function seedTechPortfolio() {
       projectTitle: "Sonic Soundscaper",
       headline:
         "A collaborative soundscape and art generation app. When you play a sound, it activates that sound for all users online at that moment in time.",
-      imageUrl:
-        "/images/tech-projects/soundscaper-web.gif",
+      imageUrl: "/images/tech-projects/soundscaper-web.gif",
       gifUrl: null,
       role: "Software Engineer, Creative Coder",
       description:
@@ -322,8 +317,7 @@ async function seedTechPortfolio() {
       projectTitle: "NYC Knights Website",
       headline:
         'Redesigned and redeveloped the WordPress website for the PS 41 "The Greenwich Village School" chess club and team.',
-      imageUrl:
-        "/images/tech-projects/NYC-Knights-screenshot.jpg",
+      imageUrl: "/images/tech-projects/NYC-Knights-screenshot.jpg",
       gifUrl: null,
       role: "Web Developer",
       description: `Created a new child theme and design to replace the outdated PHP 7.4 theme, ensuring compatibility with PHP 8.x while maintaining the existing content.\n\n
@@ -343,10 +337,8 @@ async function seedTechPortfolio() {
       projectTitle: "Keywordify",
       headline:
         "An app that compares tech keywords in a job description and a resume.",
-      imageUrl:
-        "/images/tech-projects/keywordify-animation.gif",
-      gifUrl:
-        "/images/tech-projects/keywordify-animation.gif",
+      imageUrl: "/images/tech-projects/keywordify-animation.gif",
+      gifUrl: "/images/tech-projects/keywordify-animation.gif",
       role: "Software Engineer",
       description: `I wanted to do a project with Python and learn Flask. Keywordify is an app for a software engineer's job search that compares the tech keywords in a job description and their resume. Just save a resume and a job description as .txt files and upload. With the results, green for IN and red for OUT, you can get a sense of how well suited you are and your resume is. Also, I wanted to try Plotly, the sunburst graph provides a graphic represenation of keywords in and out of the resume. Perhaps this will help you get through the ATS and onto a hirer's desk.
     \n\n
@@ -364,9 +356,9 @@ async function seedTechPortfolio() {
   const skyCamFlicker = await prisma.tech.create({
     data: {
       projectTitle: "SkyCam Flicker",
-      headline: "A Python script that animates images from NASA's Perseverance Rover's SkyCam",
-      imageUrl:
-        "/images/tech-projects/sol_296.jpg",
+      headline:
+        "A Python script that animates images from NASA's Perseverance Rover's SkyCam",
+      imageUrl: "/images/tech-projects/sol_296.jpg",
       gifUrl: null,
       role: "Creative Technologist",
       description:
@@ -381,6 +373,25 @@ async function seedTechPortfolio() {
           { name: "OpenCV" },
           { name: "Numpy" },
         ],
+      },
+    },
+  });
+
+  const cellularAutomata = await prisma.tech.create({
+    data: {
+      projectTitle: "Cellular Automata with Go",
+      headline:
+        "CLI app in GoLang to print the 256 elementary cellular automata.",
+      imageUrl: "/images/tech-projects/automata.png",
+      gifUrl: "/images/tech-projects/ca1.gif",
+      role: "Software Engineer",
+      description:
+        "Wrote a CLI app in GoLang to print the 256 elementary cellular automata to the terminal, and to watch triangles Sierpinski triangles and other patterns emerge.",
+      date: new Date("2024-10-19"),
+      githubUrl: "https://github.com/ngolebiewski/go-cellular-automata",
+      deployedUrl: "https://github.com/ngolebiewski/go-cellular-automata",
+      technologies: {
+        connect: [{ name: "Go" }],
       },
     },
   });

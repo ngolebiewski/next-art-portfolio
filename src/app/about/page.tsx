@@ -3,7 +3,7 @@ import { getMarkdownContent } from "@/utils/getMarkdownContent";
 import AboutPageWrapper from "./AboutPageWrapper"; // This will be a client component
 
 export const metadata = {
-  title: "About Nick Golebiewski – Artist & Software Engineer",
+  title: "Nick Golebiewski – Artist & Software Engineer",
   description: "Learn more about Nick Golebiewski, a Brooklyn Navy Yard-based artist and full stack developer.",
   keywords: ["Nick Golebiewski", "artist", "software engineer", "Brooklyn Navy Yard", "Nick’s Lunchbox Service"],
   authors: [{ name: "Nick Golebiewski" }],
