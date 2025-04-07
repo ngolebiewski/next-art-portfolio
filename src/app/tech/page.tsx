@@ -32,9 +32,8 @@ interface TechProject {
 
 const TechPage = () => {
   const [projects, setProjects] = useState<TechProject[]>([]);
-  const [selectedProject, setSelectedProject] = useState<TechProject | null>(
-    null
-  );
+  const [selectedProject, setSelectedProject] = useState<TechProject | null>(null);
+  const [loading, setLoading] = useState(true); // <-- Add loading state
 
   useEffect(() => {
     fetch("/api/tech-project")
@@ -42,6 +41,7 @@ const TechPage = () => {
       .then((data: TechProject[]) => {
         console.log("tech projects: ", data);
         setProjects(data);
+        setLoading(false); // <-- Set loading to false once data is fetched
       });
   }, []);
 
@@ -49,25 +49,29 @@ const TechPage = () => {
     <div className="p-6 tech-projects">
       <h1 className="text-2xl font-bold my-2">Technology Projects</h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {projects.map((project) => (
-          <Card
-            key={project.id}
-            className="cursor-pointer hover:shadow-lg"
-            onClick={() => setSelectedProject(project)}
-          >
-            <img
-              src={project.imageUrl}
-              alt={project.projectTitle}
-              className="w-full h-48 object-cover rounded-t-lg"
-            />
-            <CardContent className="p-4">
-              <h2 className="text-lg font-bold">{project.projectTitle}</h2>
-              <p className="text-sm text-gray-500">{project.headline}</p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+      {loading ? (
+        <p className="text-gray-500">Loading...</p>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {projects.map((project) => (
+            <Card
+              key={project.id}
+              className="cursor-pointer hover:shadow-lg"
+              onClick={() => setSelectedProject(project)}
+            >
+              <img
+                src={project.imageUrl}
+                alt={project.projectTitle}
+                className="w-full h-48 object-cover rounded-t-lg"
+              />
+              <CardContent className="p-4">
+                <h2 className="text-lg font-bold">{project.projectTitle}</h2>
+                <p className="text-sm text-gray-500">{project.headline}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      )}
 
       {selectedProject && (
         <Dialog
@@ -93,7 +97,6 @@ const TechPage = () => {
               className="w-full h-64 object-cover rounded-lg mb-2"
             />
 
-            {/* Added Role here */}
             <div className="my-2">
               <h3 className="text-sm font-bold">Role:</h3>
               <p className="text-sm text-gray-700">{selectedProject.role}</p>
@@ -139,5 +142,6 @@ const TechPage = () => {
     </div>
   );
 };
+
 
 export default TechPage;
