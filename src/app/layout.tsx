@@ -10,8 +10,25 @@ const rubik = Rubik({
 });
 
 export const metadata: Metadata = {
-  title: 'Art Portfolio',
-  description: 'Artist Portfolio Website',
+  title: 'Nick Golebiewski Art and Tech Portfolio',
+  description: 'Nick Golebiewski, a Brooklyn Navy Yard-based visual artist and full stack software engineer',
+  keywords: ["Nick Golebiewski", "artist", "software engineer", "Brooklyn Navy Yard", "Nick’s Lunchbox Service"],
+  authors: [{ name: "Nick Golebiewski" }],
+  openGraph: {
+    title: "About Nick Golebiewski",
+    description: "Artist and software engineer blending tech and hand-made art in NYC.",
+    url: "https://nickgolebiewski.art/about",
+    siteName: "Nick Golebiewski",
+    images: [
+      {
+        url: "https://nickgolebiewski.art/images/chinatown/1.jpg",
+        width: 1200,
+        height: 800,
+        alt: "Nick Golebiewski's Chinatown - Grand Street Painting",
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({

@@ -32,7 +32,9 @@ interface TechProject {
 
 const TechPage = () => {
   const [projects, setProjects] = useState<TechProject[]>([]);
-  const [selectedProject, setSelectedProject] = useState<TechProject | null>(null);
+  const [selectedProject, setSelectedProject] = useState<TechProject | null>(
+    null
+  );
 
   useEffect(() => {
     fetch("/api/tech-project")
@@ -72,9 +74,8 @@ const TechPage = () => {
           open={!!selectedProject}
           onOpenChange={() => setSelectedProject(null)}
         >
-         
           <DialogContent
-            className="max-w-5xl p-8 tech-projects"
+            className="max-w-5xl p-8 tech-projects max-h-[90vh] overflow-y-auto sm:max-h-none sm:overflow-visible"
             aria-labelledby="dialog-title"
             aria-describedby="dialog-description"
           >

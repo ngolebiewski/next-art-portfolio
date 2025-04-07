@@ -48,7 +48,7 @@ const Sidebar = () => {
             <NavItem href="/art/commissions" label="Commissions" />
           </li>
           <li>
-            <NavItem href="/art/cv" label="CV + Bio" />
+            <NavItem href="/art/cv" label="CV" />
           </li>
         </ul>
       </nav>

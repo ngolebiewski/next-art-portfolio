@@ -7,7 +7,7 @@ const ArtNav = () => {
       <Link href="/art/paintings">Paintings</Link>
       <Link href="/art/projects">Projects</Link>
       <Link href="/art/commissions">Commissions</Link>
-      <Link href="/art/cv">CV + Bio</Link>
+      <Link href="/art/cv">CV</Link>
     </nav>
   );
 };
