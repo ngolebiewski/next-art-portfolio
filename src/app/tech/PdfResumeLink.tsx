@@ -8,10 +8,10 @@ export default function PdfResumeLink() {
       href="/content/nick_golebiewski_resume.pdf"
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 text-red-600 hover:underline mt-2 mb-4"
+      className="inline-flex items-center gap-2 px-4 py-2 bg-red-600 text-white font-semibold rounded-lg shadow hover:bg-red-700 transition-colors mt-2 mb-4"
     >
-      <FilePdf size={24} weight="duotone" />
-      Resume
+      View My Resume
+      <FilePdf size={20} weight="duotone" alt="PDF" />
     </a>
   );
 }
