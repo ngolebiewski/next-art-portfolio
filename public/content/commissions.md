@@ -14,10 +14,11 @@ Nick often partners within the food industry for custom paintings, with multiple
 
 Golebiewski leads watercolor and drawing workshops and “walk and draw” tours in NYC for groups and organizations. He has led sessions with the Washington Square Park Conservancy, Turnstile Tours and Village Preservation.
 
-## Contact
+## Get in touch about a Commission
 
-Send me an email. Contact form TK. Otherwise, reach out on [Instagram](https://www.instagram.com/nickgolebiewski/)! 
+Send me an email at [z@nickgolebiewski.com](mailto:z@nickgolebiewski.com). 
+Otherwise, reach out on [Instagram](https://www.instagram.com/nickgolebiewski/)!
 
-## GALLERY
+## Commission of the Strand
 
-images TK
+This is where a couple that got married first met, and a very thoughtful idea for a wedding present, and also available as a print on my [Etsy page](https://nickgolebiewski.etsy.com/listing/1720936430/strand-bookstore-new-york-city-archival).

@@ -9,9 +9,11 @@ const rubik = Rubik({
   subsets: ['latin'],
 });
 
+// Nick Golebiewski, a Brooklyn Navy Yard-based visual artist and full stack software engineer
+
 export const metadata: Metadata = {
   title: 'Nick Golebiewski Art and Tech Portfolio',
-  description: 'Nick Golebiewski, a Brooklyn Navy Yard-based visual artist and full stack software engineer',
+  description: 'Nick Golebiewski is a software engineer and an artist using distinct processes, including painting, super 8 film and shadow puppet performances, to demystify urban culture and city life, with a studio in the Brooklyn Navy Yard',
   keywords: ["Nick Golebiewski", "artist", "software engineer", "Brooklyn Navy Yard", "Nick’s Lunchbox Service"],
   authors: [{ name: "Nick Golebiewski" }],
   openGraph: {

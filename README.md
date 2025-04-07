@@ -78,9 +78,13 @@ OK, Next has something called MDX, but tryng a less complex version with react-m
      3.  Create database: `CREATE DATABASE art_db_next`
      4.  Connect to new db: `\c art_db_next`
      5.  Update .env `DATABASE_URL="postgresql://<username>:<password>@localhost:5432/art_db_next"`
- 33. Hero image into component
+ 33. Hero image into component, add into more pages.
  34. Update Contact page with cellular automata gif
  35. Write Python Script to grab your own Etsy images from your account, and put in the Street Vendor Series to start. 
+ 36. **Go for a MVP TO SHARE** --> Follow up with the API/DB of 4,000+ Daily drawings/Content for images pulled from DB, etc. 
+ 37. Street Vendor and Adirondacks images. For PROJECTS, just mention the 4,088 (oh, do a math thing) drawings in a row, add one image, and a link to Instagram. 
+ 38. It's funny how 'for now' becomes 'forever' so quickly.
+ 39. Added a daily-drawing counter to the projects page.  
 
 
 ## ------Next.js Template boilerplate below------------------

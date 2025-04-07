@@ -47,7 +47,7 @@ const AboutPageClient = ({
   }, []);
 
   return (
-    <div>
+    <div className="p-4 space-y-6">
       <div className="w-full overflow-x-auto">
         <pre className="text-[10px] sm:text-xs md:text-sm lg:text-base leading-tight">
           {figletText}
@@ -65,8 +65,8 @@ const AboutPageClient = ({
           height={1416}
           className="w-full h-auto"
         />
-        <p>Pre-pandemic bio photo by Adrian Knowler</p>
       </section>
+      <p>Pre-pandemic bio photo by Adrian Knowler</p>
     </div>
   );
 };

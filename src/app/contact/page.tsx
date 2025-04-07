@@ -8,15 +8,20 @@ import Hero from "@/components/Hero";
 
 const ContactPage = () => {
   return (
-    <div>
-      <h1 className="text-2xl font-bold my-2">Contact</h1>
-      <p>Email: z@nickgolebiewski.com</p>
-      <h1 className="text-2xl font-bold my-2">
-        Connect on Social Media/Online
-      </h1>
-      <Socials />
-      <Hero imageURL="/images/tech-projects/ca1.gif" altString = "cellular automata" />
-    </div>
+    <>
+      <div className="p-4 space-y-6">
+        <h1 className="text-2xl font-bold my-2">Contact</h1>
+        <p>Email: z@nickgolebiewski.com</p>
+        <h1 className="text-2xl font-bold my-2">
+          Connect on Social Media/Online
+        </h1>
+        <Socials />
+      </div>
+      <Hero
+        imageURL="/images/tech-projects/ca1.gif"
+        altString="cellular automata"
+      />
+    </>
   );
 };
 
