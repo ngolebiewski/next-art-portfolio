@@ -85,6 +85,8 @@ OK, Next has something called MDX, but tryng a less complex version with react-m
  37. Street Vendor and Adirondacks images. For PROJECTS, just mention the 4,088 (oh, do a math thing) drawings in a row, add one image, and a link to Instagram. 
  38. It's funny how 'for now' becomes 'forever' so quickly.
  39. Added a daily-drawing counter to the projects page.  
+ 40. Added a "loading..." state in Tech Projects and also set the contents to get cached server side. 
+     1.  ADD `NEXT_PUBLIC_SITE_URL` to the `.env` file.
 
 
 ## ------Next.js Template boilerplate below------------------

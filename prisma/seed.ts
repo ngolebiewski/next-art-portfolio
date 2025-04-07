@@ -312,6 +312,37 @@ async function seedTechPortfolio() {
     },
   });
 
+  const artPortflio = await prisma.tech.create({
+    data: {
+      projectTitle: "Art and Coding Portfolio",
+      headline:
+        "A personal portfolio built with Next.js and TypeScript to showcase art and technical skills.",
+      imageUrl: "/images/portfolio_screenshot.jpg",
+      gifUrl: null,
+      role: "Artist, Software Engineer",
+      description:
+        "Developed a modern portfolio website using Next.js and TypeScript to replace an outdated WordPress site. The project focuses on presenting artwork effectively while demonstrating coding abilities. It includes building a PostgreSQL database with Prisma ORM and Python scripts for importing over 4,000 artworks from Instagram and Tumblr data. Deployment is on Vercel with a Neon PostgreSQL database, and DNS on Dreamhost, while retaining some services there. Key features include improved art presentation, enhanced discoverability and Next's SEO power, and a mobile-friendly design.",
+      date: new Date("2025-04-07"),
+      githubUrl: "https://github.com/ngolebiewski/next-art-portfolio",
+      deployedUrl: "https://www.nickgolebiewski.art/",
+      technologies: {
+        connect: [
+          { name: "Next.js" },
+          { name: "TypeScript" },
+          { name: "Prisma" },
+          { name: "PostgreSQL" },
+          { name: "Python" },
+          { name: "Vercel" },
+          { name: "Tailwind" },
+          { name: "HTML" },
+          { name: "CSS" },
+          { name: "React Markdown" },
+          { name: "Shadcn UI" },
+        ],
+      },
+    },
+  });
+
   const nycKnights = await prisma.tech.create({
     data: {
       projectTitle: "NYC Knights Website",
