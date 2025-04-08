@@ -2,6 +2,8 @@ import Hero from "@/components/Hero";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
 import { getMarkdownContent } from "@/utils/getMarkdownContent";
 
+export const revalidate = 86400; // 24 hours in seconds
+
 function daysSince2014(): number {
   const startDate = new Date("2014-01-01");
   const currentDate = new Date();
