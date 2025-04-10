@@ -59,14 +59,23 @@ const AboutPageClient = ({
 
       <section className="max-w-[600px] w-full">
         <Image
-          src="/images/bio/Nick-studio-portrait-artwork-background-web.jpg"
+          src="/images/bio/Nick-Golebiewski-Portrait-JC-Cancedda.jpg"
           alt="Nick bio photo"
           width={1000}
-          height={1416}
+          height={1468}
           className="w-full h-auto"
         />
       </section>
-      <p>Pre-pandemic bio photo by Adrian Knowler</p>
+      <p>
+        Photo of Nick by{" "}
+        <a
+          href="https://www.jccanceddaphoto.com/"
+          target="_blank"
+          className="text-blue-600 underline hover:text-blue-800"
+        >
+          JC Cancedda
+        </a>
+      </p>
     </div>
   );
 };
