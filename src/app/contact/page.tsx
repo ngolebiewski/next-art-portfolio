@@ -11,7 +11,7 @@ const ContactPage = () => {
     <>
       <div className="p-4 space-y-6">
         <h1 className="text-2xl font-bold my-2">Contact</h1>
-        <p>Email: z@nickgolebiewski.com</p>
+        <p>Email: z@nickgolebiewski.art</p>
         <h1 className="text-2xl font-bold my-2">
           Connect on Social Media/Online
         </h1>

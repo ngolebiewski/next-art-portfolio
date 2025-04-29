@@ -87,7 +87,8 @@ OK, Next has something called MDX, but tryng a less complex version with react-m
  39. Added a daily-drawing counter to the projects page.  
  40. Added a "loading..." state in Tech Projects and also set the contents to get cached server side. 
      1.  ADD `NEXT_PUBLIC_SITE_URL` to the `.env` file.
-
+ 41. Adding Phosphor Icons, because I loved their departure mono font. Right now just using the PDF icon, but hope to use MORE.
+     1.  `pnpm add @phosphor-icons/react`
 
 ## ------Next.js Template boilerplate below------------------
 
