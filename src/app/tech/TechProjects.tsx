@@ -67,11 +67,13 @@ export default function TechProjects({ projects }: { projects: TechProject[] }) 
               <DialogTitle>{selectedProject.projectTitle}</DialogTitle>
               <DialogDescription>{selectedProject.description}</DialogDescription>
             </DialogHeader>
+            <a href={selectedProject.deployedUrl} target="_blank">
             <img
               src={selectedProject.imageUrl}
               alt={selectedProject.projectTitle}
               className="w-full h-64 object-cover rounded-lg mb-2"
             />
+            </a>
 
             <div className="my-2">
               <h3 className="text-sm font-bold">Role:</h3>
