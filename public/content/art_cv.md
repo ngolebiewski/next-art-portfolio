@@ -11,6 +11,7 @@ Literary Greenwich Village, NYPL Hudson Park Library Gallery, New York, NY. Febr
 **2014**	Chinatown and Paris Paintings, 65 Fen, Brooklyn, NY. May 1-20, 2014
   
 ## Group Exhibitions and Open Studios
+**2025**	Open House New York (OHNY)  Brooklyn Navy Yard, open studio, October 18, 2025
 **2024**	Open House New York (OHNY)  Brooklyn Navy Yard, open studio, October 19, 2024  
 **2023**	Open House New York (OHNY)  Brooklyn Navy Yard, open studio, October 21, 2023  
 **2022**	OHNY Brooklyn Navy Yard, open studio October 21, 2022   
