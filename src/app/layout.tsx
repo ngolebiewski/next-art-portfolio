@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     ],
     type: "website",
   },
+  verification: {
+    me: ['https://mastodon.social/@nickgolebiewski'],
+  }
 };
 
 export default function RootLayout({
