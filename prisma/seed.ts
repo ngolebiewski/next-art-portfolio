@@ -134,46 +134,56 @@ async function seedTechnologies() {
   console.log("Seeding Technologies...");
 
   const techList: string[] = [
-    "React",
-    "Next.js",
-    "Python",
-    "JavaScript",
-    "TypeScript",
-    "Prisma",
-    "MySQL",
-    "PostgreSQL",
-    "SQLite",
-    "FastAPI",
-    "Express",
-    "Redux",
-    "REST API",
-    "Node.js",
-    "Express.js",
-    "Socket.io",
-    "Howler.js",
-    "p5.js",
-    "CSS",
-    "HTML",
-    "WordPress",
-    "Plotly",
-    "JWT (JSON Web Tokens)",
-    "GitHub",
-    "Netlify",
-    "Render",
-    "AWS",
-    "Tailwind CSS",
-    "Jest",
-    "PyTest",
-    "Phaser3",
-    "Flask",
-    "PHP",
-    "Pillow",
-    "OpenCV",
-    "Numpy",
-    "Photoshop",
-    "Go",
-    "WASM",
-    "Ebitengine",
+    // "React",
+    // "Next.js",
+    // "Python",
+    // "JavaScript",
+    // "TypeScript",
+    // "Prisma",
+    // "MySQL",
+    // "PostgreSQL",
+    // "SQLite",
+    // "FastAPI",
+    // "Express",
+    // "Redux",
+    // "REST API",
+    // "Node.js",
+    // "Express.js",
+    // "Socket.io",
+    // "Howler.js",
+    // "p5.js",
+    // "CSS",
+    // "HTML",
+    // "WordPress",
+    // "Plotly",
+    // "JWT (JSON Web Tokens)",
+    // "GitHub",
+    // "Netlify",
+    // "Render",
+    // "AWS",
+    // "Tailwind CSS",
+    // "Jest",
+    // "PyTest",
+    // "Phaser3",
+    // "Flask",
+    // "PHP",
+    // "Pillow",
+    // "OpenCV",
+    // "Numpy",
+    // "Photoshop",
+    // "Go",
+    // "WASM",
+    // "Ebitengine",
+    // 👇 NEW ADDITIONS
+    "Stripe",
+    "Lightspeed API",
+    "Neon",
+    "Vercel",
+    "PixiJS",
+    "Matter.js",
+    "MicroPython",
+    "Raspberry Pi",
+    "MTA API"
   ];
 
   for (const name of techList) {
@@ -203,7 +213,7 @@ async function seedTechPortfolio() {
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 */
-
+/*
   const towerOfZurpalen = await prisma.tech.create({
     data: {
       projectTitle: "The Tower of Zurpalen",
@@ -426,6 +436,103 @@ async function seedTechPortfolio() {
       },
     },
   });
+  */
+
+  // 1. Waterfront Bike Shop
+  const waterfrontBike = await prisma.tech.create({
+    data: {
+      projectTitle: "Waterfront Bicycle Shop",
+      headline: "A modern, full-stack e-commerce and rental platform for a local business.",
+      imageUrl: "/images/tech-projects/bikeshopny-homepage.jpg", 
+      gifUrl: null,
+      role: "Fullstack Software Engineer",
+      description: "Transformed a legacy single-page site into a scalable Next.js application. Integrated 'Bike Rental Manager' for bookings and wrangled the Lightspeed POS API via OAuth2 to sync inventory. Built a robust backend with Prisma and PostgreSQL (Neon) to handle data, deployed serverless on Vercel for high performance and mobile responsiveness.",
+      date: new Date("2024-05-01"), // Update date if needed
+      githubUrl: "https://github.com/waterfront-bike-shop/bikeshopny",
+      deployedUrl: "https://www.bikeshopny.com/",
+      technologies: {
+        connect: [
+          { name: "TypeScript" },
+          { name: "Next.js" },
+          { name: "Tailwind CSS" },
+          { name: "Prisma" },
+          { name: "Stripe" },
+          { name: "Lightspeed API" },
+          { name: "PostgreSQL" },
+          { name: "Python" },
+          { name: "Vercel" },
+          { name: "Neon" },
+        ],
+      },
+    },
+  });
+
+  // 2. Prime Danger
+  const primeDanger = await prisma.tech.create({
+    data: {
+      projectTitle: "Prime Danger",
+      headline: "A physics-based pixel art game for mastering prime numbers.",
+      imageUrl: "/images/tech-projects/prime-danger.jpg", 
+      gifUrl: null,
+      role: "Game Developer",
+      description: "Designed a pexel-art educational game to help students memorize primes under 200, using the Sieve of Eratosthenes behind the scenes. Utilized PixiJS for high-performance 2D rendering and Matter.js for physics interactions, creating a gamified experience where players 'crush' numbers with correct answers.",
+      date: new Date("2025-11-01"), 
+      githubUrl: "https://github.com/ngolebiewski/prime-danger",
+      deployedUrl: "https://prime-danger.netlify.app/",
+      technologies: {
+        connect: [
+          { name: "PixiJS" },
+          { name: "JavaScript" },
+          { name: "Matter.js" },
+        ],
+      },
+    },
+  });
+
+  // 3. Game of Life
+  const gameOfLife = await prisma.tech.create({
+    data: {
+      projectTitle: "Interactive Game of Life",
+      headline: "Conway's cellular automata simulated via Go, Ebitengine, and WASM.",
+      imageUrl: "/images/tech-projects/game-of-life.gif", 
+      gifUrl: null,
+      role: "Software Engineer",
+      description: "Cellular Automata! A high-performance implementation of John Conway's Game of Life using Go and Ebitengine. Originally designed as an interactive installation running on a Raspberry Pi with NES controller inputs. Ported to the web via WebAssembly (WASM), allowing users to manipulate simulation parameters in real-time to visualize complex algorithmic patterns.",
+      date: new Date("2025-10-01"), 
+      githubUrl: "https://github.com/ngolebiewski/pi-game-of-life",
+      deployedUrl: "https://pi-game-of-life.netlify.app/",
+      technologies: {
+        connect: [
+          { name: "Go" },
+          { name: "Ebitengine" },
+          { name: "WASM" },
+        ],
+      },
+    },
+  });
+
+  // 4. Pi-Bus Tracker
+  const piBus = await prisma.tech.create({
+    data: {
+      projectTitle: "Pi-Bus: IoT MTA Tracker",
+      headline: "A standalone hardware device for real-time NYC bus tracking.",
+      imageUrl: "/images/tech-projects/pico_bus.gif", 
+      gifUrl: null,
+      role: "Creative Technologist",
+      description: "Engineered an Internet-of-Things (IoT) device using a Raspberry Pi Pico W and an I2C LCD screen. Programmed in MicroPython to interface with the official MTA API, fetching and parsing real-time transit data to display arrival times for specific bus stops. Involves custom circuit soldering and hardware fabrication.",
+      date: new Date("2025-09-01"), 
+      githubUrl: "https://github.com/ngolebiewski/pi-bus-pico-2w",
+      deployedUrl: "https://github.com/ngolebiewski/pi-bus-pico-2w", // No live link for hardware, pointing to repo
+      technologies: {
+        connect: [
+          { name: "Raspberry Pi" },
+          { name: "MicroPython" },
+          { name: "MTA API" },
+          { name: "Python" },
+        ],
+      },
+    },
+  });
 
   console.log("Tech Portfolio Items seeded successfully!");
 }
@@ -436,8 +543,8 @@ async function main(deleteExistingData = false) {
     : console.log("delete all content: false");
   await seedTechnologies();
   await seedTechPortfolio();
-  await seedSeries();
-  await seedMediums();
+  // await seedSeries();
+  // await seedMediums();
 }
 
 ////////////////////////////////////////////////////////////
