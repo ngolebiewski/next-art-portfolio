@@ -476,7 +476,7 @@ async function seedTechPortfolio() {
       imageUrl: "/images/tech-projects/prime-danger.jpg", 
       gifUrl: null,
       role: "Game Developer",
-      description: "Designed a pexel-art educational game to help students memorize primes under 200, using the Sieve of Eratosthenes behind the scenes. Utilized PixiJS for high-performance 2D rendering and Matter.js for physics interactions, creating a gamified experience where players 'crush' numbers with correct answers.",
+      description: "Designed a pixel-art educational game to help students memorize primes under 200, using the Sieve of Eratosthenes behind the scenes. Utilized PixiJS for high-performance 2D rendering and Matter.js for physics interactions, creating a gamified experience where players 'crush' numbers with correct answers.",
       date: new Date("2025-11-01"), 
       githubUrl: "https://github.com/ngolebiewski/prime-danger",
       deployedUrl: "https://prime-danger.netlify.app/",
