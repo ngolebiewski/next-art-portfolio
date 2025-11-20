@@ -172,18 +172,18 @@ async function seedTechnologies() {
     // "Numpy",
     // "Photoshop",
     // "Go",
-    // "WASM",
-    // "Ebitengine",
+    "WASM",
+    "Ebitengine",
     // 👇 NEW ADDITIONS
-    "Stripe",
-    "Lightspeed API",
-    "Neon",
-    "Vercel",
-    "PixiJS",
-    "Matter.js",
-    "MicroPython",
-    "Raspberry Pi",
-    "MTA API"
+    // "Stripe",
+    // "Lightspeed API",
+    // "Neon",
+    // "Vercel",
+    // "PixiJS",
+    // "Matter.js",
+    // "MicroPython",
+    // "Raspberry Pi",
+    // "MTA API"
   ];
 
   for (const name of techList) {
@@ -438,6 +438,7 @@ async function seedTechPortfolio() {
   });
   */
 
+  /*
   // 1. Waterfront Bike Shop
   const waterfrontBike = await prisma.tech.create({
     data: {
@@ -488,7 +489,7 @@ async function seedTechPortfolio() {
       },
     },
   });
-
+*/
   // 3. Game of Life
   const gameOfLife = await prisma.tech.create({
     data: {

@@ -62,7 +62,14 @@ export default function TechProjects({ projects }: { projects: TechProject[] }) 
 
       {selectedProject && (
         <Dialog open={true} onOpenChange={() => setSelectedProject(null)}>
-          <DialogContent className="max-w-5xl p-8 tech-projects">
+          <DialogContent 
+            className="
+              max-w-5xl p-8 tech-projects 
+              max-h-[90vh] sm:max-h-[85vh] 
+              overflow-y-auto sm:overflow-hidden
+              scrollbar-hide
+            "
+          >
             <DialogHeader>
               <DialogTitle>{selectedProject.projectTitle}</DialogTitle>
               <DialogDescription>{selectedProject.description}</DialogDescription>
