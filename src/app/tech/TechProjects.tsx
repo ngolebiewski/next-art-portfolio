@@ -66,7 +66,7 @@ export default function TechProjects({ projects }: { projects: TechProject[] }) 
             className="
               max-w-5xl p-8 tech-projects 
               max-h-[90vh] sm:max-h-[85vh] 
-              overflow-y-auto sm:overflow-hidden
+              overflow-y-auto sm:overflow-y-auto
               scrollbar-hide
             "
           >

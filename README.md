@@ -90,6 +90,7 @@ OK, Next has something called MDX, but tryng a less complex version with react-m
  41. Adding Phosphor Icons, because I loved their departure mono font. Right now just using the PDF icon, but hope to use MORE.
      1.  `pnpm add @phosphor-icons/react`
  42. Add in new tech portfolio items, 8 months after doing it initially, and didn't remember that I upload via the Seed file. That is definitely a to do item to fix up. Adding these, I noticed that on mobile the modal that shows you the details for each tech item (i.e. the Go Game of Life) overflow the top and bottom -- and you can't close the window to get back! Time to fix it.
+ 43. Fix that dialog box issue -- now scrollable on mobile!
 
 ## ------Next.js Template boilerplate below------------------
 
