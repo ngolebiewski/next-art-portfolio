@@ -14,7 +14,7 @@ async function deleteContent() {
       console.log(`Deleted existing ${tableName.toUpperCase()} data...`);
     } catch (error) {
       console.error(
-        `Error deleting ${tableName.toUpperCase()} projects: ${error}`
+        `Error deleting ${tableName.toUpperCase()} projects: ${error}`,
       );
     }
   }
@@ -51,7 +51,7 @@ async function seedMediums() {
       } else {
         console.error(
           `An unexpected error occurred while adding medium '${mediumName}':`,
-          error
+          error,
         );
       }
     }
@@ -87,7 +87,7 @@ async function seedSeries() {
       } else {
         console.error(
           `An unexpected error occurred while adding medium '${seriesName}':`,
-          error
+          error,
         );
       }
     }
@@ -123,7 +123,7 @@ async function seed() {
       } else {
         console.error(
           `An unexpected error occurred while adding medium '${seriesName}':`,
-          error
+          error,
         );
       }
     }
@@ -213,7 +213,7 @@ async function seedTechPortfolio() {
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 */
-/*
+  /*
   const towerOfZurpalen = await prisma.tech.create({
     data: {
       projectTitle: "The Tower of Zurpalen",
@@ -491,46 +491,66 @@ async function seedTechPortfolio() {
   });
 */
   // 3. Game of Life
-  const gameOfLife = await prisma.tech.create({
-    data: {
-      projectTitle: "Interactive Game of Life",
-      headline: "Conway's cellular automata simulated via Go, Ebitengine, and WASM.",
-      imageUrl: "/images/tech-projects/game-of-life.gif", 
-      gifUrl: null,
-      role: "Software Engineer",
-      description: "Cellular Automata! A high-performance implementation of John Conway's Game of Life using Go and Ebitengine. Originally designed as an interactive installation running on a Raspberry Pi with NES controller inputs. Ported to the web via WebAssembly (WASM), allowing users to manipulate simulation parameters in real-time to visualize complex algorithmic patterns.",
-      date: new Date("2025-10-01"), 
-      githubUrl: "https://github.com/ngolebiewski/pi-game-of-life",
-      deployedUrl: "https://pi-game-of-life.netlify.app/",
-      technologies: {
-        connect: [
-          { name: "Go" },
-          { name: "Ebitengine" },
-          { name: "WASM" },
-        ],
-      },
-    },
-  });
+  // const gameOfLife = await prisma.tech.create({
+  //   data: {
+  //     projectTitle: "Interactive Game of Life",
+  //     headline: "Conway's cellular automata simulated via Go, Ebitengine, and WASM.",
+  //     imageUrl: "/images/tech-projects/game-of-life.gif",
+  //     gifUrl: null,
+  //     role: "Software Engineer",
+  //     description: "Cellular Automata! A high-performance implementation of John Conway's Game of Life using Go and Ebitengine. Originally designed as an interactive installation running on a Raspberry Pi with NES controller inputs. Ported to the web via WebAssembly (WASM), allowing users to manipulate simulation parameters in real-time to visualize complex algorithmic patterns.",
+  //     date: new Date("2025-10-01"),
+  //     githubUrl: "https://github.com/ngolebiewski/pi-game-of-life",
+  //     deployedUrl: "https://pi-game-of-life.netlify.app/",
+  //     technologies: {
+  //       connect: [
+  //         { name: "Go" },
+  //         { name: "Ebitengine" },
+  //         { name: "WASM" },
+  //       ],
+  //     },
+  //   },
+  // });
 
-  // 4. Pi-Bus Tracker
-  const piBus = await prisma.tech.create({
+  // // 4. Pi-Bus Tracker
+  // const piBus = await prisma.tech.create({
+  //   data: {
+  //     projectTitle: "Pi-Bus: IoT MTA Tracker",
+  //     headline: "A standalone hardware device for real-time NYC bus tracking.",
+  //     imageUrl: "/images/tech-projects/pico_bus.gif",
+  //     gifUrl: null,
+  //     role: "Creative Technologist",
+  //     description: "Engineered an Internet-of-Things (IoT) device using a Raspberry Pi Pico W and an I2C LCD screen. Programmed in MicroPython to interface with the official MTA API, fetching and parsing real-time transit data to display arrival times for specific bus stops. Involves custom circuit soldering and hardware fabrication.",
+  //     date: new Date("2025-09-01"),
+  //     githubUrl: "https://github.com/ngolebiewski/pi-bus-pico-2w",
+  //     deployedUrl: "https://github.com/ngolebiewski/pi-bus-pico-2w", // No live link for hardware, pointing to repo
+  //     technologies: {
+  //       connect: [
+  //         { name: "Raspberry Pi" },
+  //         { name: "MicroPython" },
+  //         { name: "MTA API" },
+  //         { name: "Python" },
+  //       ],
+  //     },
+  //   },
+  // });
+
+  // NEW 1/27/25. Alley Cat 1999
+  const alleyCat1999 = await prisma.tech.create({
     data: {
-      projectTitle: "Pi-Bus: IoT MTA Tracker",
-      headline: "A standalone hardware device for real-time NYC bus tracking.",
-      imageUrl: "/images/tech-projects/pico_bus.gif", 
+      projectTitle: "Alley Cat 1999",
+      headline:
+        "2D Game: Bicycle Messenger style bike race through pixel-art NYC.",
+      imageUrl: "/images/tech-projects/alleycat-1999-splash.jpg",
       gifUrl: null,
-      role: "Creative Technologist",
-      description: "Engineered an Internet-of-Things (IoT) device using a Raspberry Pi Pico W and an I2C LCD screen. Programmed in MicroPython to interface with the official MTA API, fetching and parsing real-time transit data to display arrival times for specific bus stops. Involves custom circuit soldering and hardware fabrication.",
-      date: new Date("2025-09-01"), 
-      githubUrl: "https://github.com/ngolebiewski/pi-bus-pico-2w",
-      deployedUrl: "https://github.com/ngolebiewski/pi-bus-pico-2w", // No live link for hardware, pointing to repo
+      role: "Software Engineer, Artist, Game Designer",
+      description:
+        "A game prototype built in Go using Ebitengine where you are a bike messenger in NYC racing in an 'Alley Cat' where you get a manifest, a checklist, of all the stops you must make before heading to the finish. I drew all the pixel-art in Asesprite, and made the levels in Tiled.",
+      date: new Date("2026-01-12"),
+      githubUrl: "https://github.com/ngolebiewski/alley_cat_1999",
+      deployedUrl: "https://nickgolebiewski.itch.io/alleycat1999",
       technologies: {
-        connect: [
-          { name: "Raspberry Pi" },
-          { name: "MicroPython" },
-          { name: "MTA API" },
-          { name: "Python" },
-        ],
+        connect: [{ name: "Go" }, { name: "Ebitengine" }, { name: "WASM" }],
       },
     },
   });
@@ -542,7 +562,7 @@ async function main(deleteExistingData = false) {
   deleteExistingData
     ? deleteContent()
     : console.log("delete all content: false");
-  await seedTechnologies();
+  // await seedTechnologies();
   await seedTechPortfolio();
   // await seedSeries();
   // await seedMediums();
