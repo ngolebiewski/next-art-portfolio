@@ -1,7 +1,7 @@
 // app/tech/TechProjects.tsx
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -34,14 +34,21 @@ interface TechProject {
 export default function TechProjects({ projects }: { projects: TechProject[] }) {
   const [selectedProject, setSelectedProject] = useState<TechProject | null>(null);
 
-  if (!projects.length) {
+  const sortedProjects = useMemo(()=>{
+    return [...projects].sort(
+      (a,b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
+  }, [projects])
+
+
+  if (!sortedProjects.length) {
     return <p>Loading...</p>;
   }
 
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {projects.map((project) => (
+        {sortedProjects.map((project) => (
           <Card
             key={project.id}
             className="cursor-pointer hover:shadow-lg"
